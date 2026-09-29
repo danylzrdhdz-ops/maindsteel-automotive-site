@@ -2,7 +2,7 @@ import { execSync } from 'child_process';
 import fs from 'fs';
 
 console.log('[BUILD] Iniciando compilación de sitio web principal...');
-execSync('npm run build:vite', { stdio: 'inherit' });
+execSync('npm run build:vite -- --base=/maindsteel-automotive-site/', { stdio: 'inherit' });
 
 console.log('[BUILD] Iniciando compilación de B2B Chat & RFQ...');
 // Install sub-project deps first as Vercel only installs root ones automatically

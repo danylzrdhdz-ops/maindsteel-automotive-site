@@ -5,7 +5,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: '/cotizador/',
+    base: '/maindsteel-automotive-site/cotizador/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
