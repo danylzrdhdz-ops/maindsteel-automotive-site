@@ -6,7 +6,7 @@
       "framework": "vite"
     },
     "cotizador": {
-      "root": "maindsteel-automotive---b2b-chat-&-rfq",
+      "root": "b2b-chat-rfq",
       "framework": "vite"
     }
   },
