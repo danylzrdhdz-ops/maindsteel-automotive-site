@@ -1,0 +1,27 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "services": {
+    "main-website": {
+      "root": ".",
+      "framework": "vite"
+    },
+    "cotizador": {
+      "root": "maindsteel-automotive---b2b-chat-&-rfq",
+      "framework": "vite"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/cotizador/(.*)",
+      "destination": {
+        "service": "cotizador"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "destination": {
+        "service": "main-website"
+      }
+    }
+  ]
+}
