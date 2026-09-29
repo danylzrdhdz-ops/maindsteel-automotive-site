@@ -6,7 +6,7 @@ execSync('npm run build:vite', { stdio: 'inherit' });
 
 console.log('[BUILD] Iniciando compilación de B2B Chat & RFQ...');
 // Install sub-project deps first as Vercel only installs root ones automatically
-execSync('npm install', { cwd: './b2b-chat-rfq', stdio: 'inherit' });
+execSync('npm install --legacy-peer-deps', { cwd: './b2b-chat-rfq', stdio: 'inherit' });
 execSync('npm run build', { cwd: './b2b-chat-rfq', stdio: 'inherit' });
 
 console.log('[BUILD] Consolidando directorios...');
