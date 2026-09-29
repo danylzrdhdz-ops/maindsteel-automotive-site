@@ -1,0 +1,6 @@
+{
+  "name": "Maindsteel Automotive - B2B Chat & RFQ",
+  "description": "API de renderizado e interfaz gráfica B2B para cotizaciones industriales de Maindsteel Automotive Planta Aguascalientes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Maindsteel Automotive",
+  "description": "Plataforma industrial de Maindsteel Automotive: diseño y manufactura de partes automotrices, catálogo de procesos CNC y cotizaciones en línea.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

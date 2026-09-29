@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --gold-primary: #E5A824;
+    --gold-bright: #F1B434;
+    --gold-muted: #B8860B;
+    --gold-dark: #2A1F08;
+    --gold-glow: rgba(229, 168, 36, 0.28);
+    --gold-border: rgba(229, 168, 36, 0.55);
+    --bg-black: #0B0C0E;
+    --bg-card: #101114;
+    --bg-subtle: #17181D;
+  }
+
+  body {
+    background-color: #0B0C0E;
+    color: #F3F4F6;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+.font-mono-tech {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-feature-settings: 'tnum' on, 'zero' on;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0C0E;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #262115;
+  border-radius: 3px;
+  border: 1px solid rgba(229, 168, 36, 0.25);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #E5A824;
+}
+
+/* Golden filament border and glow matching the Maindsteel website */
+.gold-filament-border {
+  border: 1px solid rgba(229, 168, 36, 0.45);
+  box-shadow: 0 0 18px -2px rgba(229, 168, 36, 0.15), inset 0 0 10px -5px rgba(229, 168, 36, 0.08);
+}
+
+.gold-glow-subtle {
+  box-shadow: 0 0 25px -4px rgba(229, 168, 36, 0.22);
+}
+
+.gold-text-glow {
+  text-shadow: 0 0 12px rgba(229, 168, 36, 0.4);
+}
