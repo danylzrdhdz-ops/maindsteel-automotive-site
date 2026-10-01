@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight, Sparkles, CheckCircle } from 'lucide-react';
 import { RoutePath } from '../types';
 import { PROCESSES_DATA } from '../data/processesData';
+import Image from '../components/Image';
 
 interface ProcessesCatalogViewProps {
   onNavigate: (route: RoutePath) => void;
@@ -17,7 +18,7 @@ export const ProcessesCatalogView: React.FC<ProcessesCatalogViewProps> = ({
       
       {/* 1. HERO BANNER */}
       <section className="relative w-full h-72 sm:h-80 flex items-center justify-center overflow-hidden border-b border-zinc-800">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1600&q=80"
           alt="Procesos de manufactura industrial"
           className="absolute inset-0 w-full h-full object-cover filter brightness-[0.3] contrast-125 scale-105"
@@ -47,7 +48,7 @@ export const ProcessesCatalogView: React.FC<ProcessesCatalogViewProps> = ({
             >
               {/* Left Photo */}
               <div className="w-full md:w-[35%] h-64 md:h-auto overflow-hidden bg-zinc-950 relative border-r border-zinc-800/60">
-                <img
+                <Image
                   src={proc.cardImage || proc.machineryImage}
                   alt={proc.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-90"

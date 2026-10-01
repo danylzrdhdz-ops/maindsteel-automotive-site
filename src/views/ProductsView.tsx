@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ProductItem } from '../types';
 import { PRODUCTS_DATA } from '../data/productsData';
 import { ProductDetailModal } from '../components/ProductDetailModal';
+import Image from '../components/Image';
 
 interface ProductsViewProps {
   onOpenQuote: (productName: string) => void;
@@ -40,7 +41,7 @@ export const ProductsView: React.FC<ProductsViewProps> = ({ onOpenQuote }) => {
       
       {/* 1. HERO BANNER */}
       <section className="relative w-full h-72 sm:h-80 flex items-center justify-center overflow-hidden border-b border-zinc-800">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1600&q=80"
           alt="Productos automotrices metálicos"
           className="absolute inset-0 w-full h-full object-cover filter brightness-[0.25] contrast-125 scale-105"
@@ -93,7 +94,7 @@ export const ProductsView: React.FC<ProductsViewProps> = ({ onOpenQuote }) => {
             >
               {/* Product Photo Full-Bleed Container */}
               <div className="relative w-full aspect-square overflow-hidden bg-zinc-900 border-b border-zinc-800/80">
-                <img
+                <Image
                   src={product.image}
                   alt={product.title}
                   className="absolute inset-0 w-full h-full object-cover scale-[1.15] group-hover:scale-[1.22] transition-transform duration-500 filter brightness-95"

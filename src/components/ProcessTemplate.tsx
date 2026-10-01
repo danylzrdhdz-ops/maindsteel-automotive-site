@@ -1,9 +1,10 @@
 import React from 'react';
 import { ArrowLeft, Check, Layers, Cpu, ShieldAlert, Sparkles } from 'lucide-react';
 import { ProcessDetails, RoutePath } from '../types';
-import maquinariaImg from '../../images/Maquinaria.png';
-import garantiaImg from '../../images/Garantía Maindsteel.png';
-import hidrocalidadImg from '../../images/100_hidrocalidad.png';
+import maquinariaImg from '../../images/Maquinaria.webp';
+import garantiaImg from '../../images/Garantía Maindsteel.webp';
+import hidrocalidadImg from '../../images/100_hidrocalidad.webp';
+import Image from './Image';
 
 interface ProcessTemplateProps {
   process: ProcessDetails;
@@ -22,7 +23,7 @@ export const ProcessTemplate: React.FC<ProcessTemplateProps> = ({
       {/* 1. HERO BANNER */}
       <section className="relative w-full h-[320px] md:h-[380px] overflow-hidden flex items-center justify-center bg-[#08090b]">
         {/* Imagen de fondo específica de este proceso */}
-        <img 
+        <Image 
           src={process.coverImage || process.cardImage} 
           alt={process.title} 
           className={`absolute inset-0 w-full h-full pointer-events-none ${process.coverImageFit === 'contain' ? 'object-contain' : 'object-cover object-center scale-105'}`}
@@ -60,7 +61,7 @@ export const ProcessTemplate: React.FC<ProcessTemplateProps> = ({
           {/* Left Machine Image with Gold Border */}
           <div className="lg:col-span-6">
             <div className="relative w-full h-[320px] md:h-[360px] rounded-2xl border-2 border-[#c59b27]/60 overflow-hidden bg-[#0c0d10]">
-              <img
+              <Image
                 src={process.machineryImage}
                 alt={`${process.title} - Maquinaria`}
                 className={`w-full h-full block ${process.machineryImageFit === 'contain' ? 'object-contain' : 'object-cover scale-[1.02]'}`}
@@ -159,7 +160,7 @@ export const ProcessTemplate: React.FC<ProcessTemplateProps> = ({
           {/* Right Manufactured Part Image with Gold Border */}
           <div className="lg:col-span-6 order-1 lg:order-2">
             <div className="relative w-full h-[320px] md:h-[360px] rounded-2xl border-2 border-[#c59b27]/60 overflow-hidden bg-[#0c0d10]">
-              <img
+              <Image
                 src={process.advantagesImage}
                 alt={`${process.title} - Producto terminado`}
                 className="w-full h-full object-cover block scale-[1.02]"
@@ -178,7 +179,7 @@ export const ProcessTemplate: React.FC<ProcessTemplateProps> = ({
             {/* CARD 1: MAQUINARIA */}
             <div className="bg-[#12141a] rounded-lg p-7 border border-zinc-700/80 hover:border-[#d4af37] transition-all flex flex-col items-center text-center shadow-lg group">
               <div className="mb-5 transform group-hover:-translate-y-2 transition-transform h-32 w-32 flex items-center justify-center">
-                <img src={maquinariaImg} alt="Maquinaria Maindsteel" className="w-full h-full object-contain filter drop-shadow-[0_4px_8px_rgba(212,175,55,0.4)] transform scale-[3]" />
+                <Image src={maquinariaImg} alt="Maquinaria Maindsteel" className="w-full h-full object-contain filter drop-shadow-[0_4px_8px_rgba(212,175,55,0.4)] transform scale-[3]" />
               </div>
               <h3 className="text-base font-extrabold uppercase tracking-wider text-white mb-3 mt-4">
                 Maquinaria
@@ -191,7 +192,7 @@ export const ProcessTemplate: React.FC<ProcessTemplateProps> = ({
             {/* CARD 2: GARANTÍA MAINDSTEEL */}
             <div className="bg-[#12141a] rounded-lg p-7 border border-zinc-700/80 hover:border-[#d4af37] transition-all flex flex-col items-center text-center shadow-lg group">
               <div className="mb-5 transform group-hover:-translate-y-2 transition-transform h-32 w-32 flex items-center justify-center">
-                <img src={garantiaImg} alt="Garantía Maindsteel" className="w-full h-full object-contain filter drop-shadow-[0_4px_8px_rgba(212,175,55,0.4)] transform scale-[3]" />
+                <Image src={garantiaImg} alt="Garantía Maindsteel" className="w-full h-full object-contain filter drop-shadow-[0_4px_8px_rgba(212,175,55,0.4)] transform scale-[3]" />
               </div>
               <h3 className="text-base font-extrabold uppercase tracking-wider text-white mb-3 mt-4">
                 Garantía Maindsteel
@@ -204,7 +205,7 @@ export const ProcessTemplate: React.FC<ProcessTemplateProps> = ({
             {/* CARD 3: 100% HIDROCALIDAD */}
             <div className="bg-[#12141a] rounded-lg p-7 border border-zinc-700/80 hover:border-[#d4af37] transition-all flex flex-col items-center text-center shadow-lg group">
               <div className="mb-5 transform group-hover:-translate-y-2 transition-transform h-32 w-32 flex items-center justify-center">
-                <img src={hidrocalidadImg} alt="100% Hidrocalidad" className="w-full h-full object-contain filter drop-shadow-[0_4px_8px_rgba(212,175,55,0.4)] transform scale-[3]" />
+                <Image src={hidrocalidadImg} alt="100% Hidrocalidad" className="w-full h-full object-contain filter drop-shadow-[0_4px_8px_rgba(212,175,55,0.4)] transform scale-[3]" />
               </div>
               <h3 className="text-base font-extrabold uppercase tracking-wider text-white mb-3 mt-4">
                 100% Hidrocalidad

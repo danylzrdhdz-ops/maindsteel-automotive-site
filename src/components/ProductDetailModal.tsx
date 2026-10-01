@@ -1,6 +1,7 @@
 import React from 'react';
 import { X, Check, Shield, Layers, Gauge, Send } from 'lucide-react';
 import { ProductItem } from '../types';
+import Image from './Image';
 
 interface ProductDetailModalProps {
   product: ProductItem | null;
@@ -51,7 +52,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
         <div className="p-6 space-y-6 max-h-[75vh] overflow-y-auto">
           {/* Photo on circular dark pedestal representation */}
           <div className="relative rounded-lg overflow-hidden border border-[#d4af37]/50 aspect-[16/9] bg-zinc-950 flex items-center justify-center">
-            <img
+            <Image
               src={product.image}
               alt={product.title}
               className="w-full h-full object-cover filter brightness-95"

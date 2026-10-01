@@ -1,6 +1,7 @@
 import React from 'react';
-import certificacionesImg from '../../images/certificaciones.png';
-import clientesImg from '../../images/nuestros clientes.png';
+import certificacionesImg from '../../images/certificaciones.webp';
+import clientesImg from '../../images/nuestros clientes.webp';
+import Image from './Image';
 
 // ==========================================
 // 1. EMBLEMA M MAINDSTEEL (3D GOLD CHISELED EMBLEM)
@@ -421,7 +422,7 @@ export const GoldMedallionCar: React.FC<{ size?: number; className?: string }> =
 export const CertificacionesStack: React.FC<{ className?: string }> = ({ className = '' }) => {
   return (
     <div className={`flex flex-col items-center justify-center select-none ${className}`} id="certificaciones-stack">
-      <img src={certificacionesImg} alt="Certificaciones" className="w-[85%] max-w-[280px] h-auto object-contain drop-shadow-xl hover:scale-105 transition-transform duration-500" />
+      <Image src={certificacionesImg} alt="Certificaciones" className="w-[85%] max-w-[280px] h-auto object-contain drop-shadow-xl hover:scale-105 transition-transform duration-500" />
     </div>
   );
 };
@@ -437,7 +438,7 @@ export const NuestrosClientesBanner: React.FC<{ className?: string }> = ({ class
       id="nuestros-clientes-banner"
     >
       <div className="flex justify-center items-center w-full min-h-[140px]">
-        <img 
+        <Image 
           src={clientesImg} 
           alt="Nuestros Clientes" 
           className="w-[95%] max-w-[900px] h-auto object-contain drop-shadow-xl hover:scale-[1.02] transition-transform duration-500" 
@@ -453,7 +454,7 @@ export const NuestrosClientesBanner: React.FC<{ className?: string }> = ({ class
 export const CapacidadTecnologicaVisual: React.FC<{ className?: string }> = ({ className = '' }) => {
   return (
     <div className={`relative w-full h-full overflow-hidden ${className}`}>
-      <img
+      <Image
         src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1800&q=80"
         alt="Capacidad Tecnológica Maindsteel"
         className="w-full h-full object-cover filter brightness-[0.38] contrast-125"
@@ -470,7 +471,7 @@ export const CapacidadTecnologicaVisual: React.FC<{ className?: string }> = ({ c
 export const ManufacturaAlaAlturaVisual: React.FC<{ className?: string }> = ({ className = '' }) => {
   return (
     <div className={`relative w-full h-full overflow-hidden ${className}`}>
-      <img
+      <Image
         src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1800&q=80"
         alt="Manufactura a la altura Maindsteel"
         className="w-full h-full object-cover filter brightness-[0.4] contrast-120"

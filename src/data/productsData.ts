@@ -1,30 +1,30 @@
 import { ProductItem } from '../types';
 
-import imgProdDobladoTubo from '../../imgs productos/Doblado de tubo producto.png';
-import imgDoblado1 from '../../imgs productos/Doblado de tubo 1.png';
-import imgDoblado2 from '../../imgs productos/Doblado de tubo 2.png';
-import imgDoblado3 from '../../imgs productos/Doblado de tubo 3.png';
+import imgProdDobladoTubo from '../../imgs productos/Doblado de tubo producto.webp';
+import imgDoblado1 from '../../imgs productos/Doblado de tubo 1.webp';
+import imgDoblado2 from '../../imgs productos/Doblado de tubo 2.webp';
+import imgDoblado3 from '../../imgs productos/Doblado de tubo 3.webp';
 
-import imgProdFormadoAlambre from '../../imgs productos/formado de alambre producto.png';
-import imgFormado1 from '../../imgs productos/Formado de alambre 1.png';
+import imgProdFormadoAlambre from '../../imgs productos/formado de alambre producto.webp';
+import imgFormado1 from '../../imgs productos/Formado de alambre 1.webp';
 
-import imgProdSoldaduraTigMig from '../../imgs productos/Soldadura tigmig producto.png';
+import imgProdSoldaduraTigMig from '../../imgs productos/Soldadura tigmig producto.webp';
 
-import imgProdEstacionesTrabajo from '../../imgs productos/Estaciones de trabajo producto.png';
-import imgEstaciones1 from '../../imgs productos/Estaciones de trabajo 1.png';
-import imgEstaciones2 from '../../imgs productos/Estaciones de trabajo 2.png';
+import imgProdEstacionesTrabajo from '../../imgs productos/Estaciones de trabajo producto.webp';
+import imgEstaciones1 from '../../imgs productos/Estaciones de trabajo 1.webp';
+import imgEstaciones2 from '../../imgs productos/Estaciones de trabajo 2.webp';
 
-import imgProdRacksManejo from '../../imgs productos/Racks de manejo producto.png';
-import imgRacks1 from '../../imgs productos/Racks de manejo y transporte de materiales 1.png';
-import imgRacks2 from '../../imgs productos/Rack de manejo y transporte de materiales 2.png';
+import imgProdRacksManejo from '../../imgs productos/Racks de manejo producto.webp';
+import imgRacks1 from '../../imgs productos/Racks de manejo y transporte de materiales 1.webp';
+import imgRacks2 from '../../imgs productos/Rack de manejo y transporte de materiales 2.webp';
 
-import imgProdComponentesMetalicos from '../../imgs productos/Contenedores de manejo producto.png';
-import imgContenedores1 from '../../imgs productos/Contenedores para manejo de material 1.png';
+import imgProdComponentesMetalicos from '../../imgs productos/Contenedores de manejo producto.webp';
+import imgContenedores1 from '../../imgs productos/Contenedores para manejo de material 1.webp';
 
-import imgProdCarrosManejo from '../../imgs productos/carro para manejo de material producto.png';
-import imgCarro1 from '../../imgs productos/carro de manejo 1.png';
-import imgCarro2 from '../../imgs productos/Carro de manejo 2.png';
-import imgCarro3 from '../../imgs productos/carro de manejo 3.png';
+import imgProdCarrosManejo from '../../imgs productos/carro para manejo de material producto.webp';
+import imgCarro1 from '../../imgs productos/carro de manejo 1.webp';
+import imgCarro2 from '../../imgs productos/Carro de manejo 2.webp';
+import imgCarro3 from '../../imgs productos/carro de manejo 3.webp';
 
 export const PRODUCTS_DATA: ProductItem[] = [
   {

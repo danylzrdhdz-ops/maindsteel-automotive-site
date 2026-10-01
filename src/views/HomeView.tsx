@@ -12,12 +12,13 @@ import {
   ManufacturaAlaAlturaVisual
 } from '../components/BrandIcons';
 import { PROCESSES_DATA } from '../data/processesData';
-import manufacturaBg from '../../images/manufactura ala altura de la empresa.png';
-import medallaPlateada from '../../images/medalla plateada de auto.png';
-import politicaImg from '../../images/política de calidad.png';
-import garantiaImg from '../../images/garantia maindsteel medalla.png';
-import mexicanoImg from '../../images/100  mexicano.png';
-import capacidadBg from '../../images/capacidad tecnológica.png';
+import manufacturaBg from '../../images/manufactura ala altura de la empresa.webp';
+import medallaPlateada from '../../images/medalla plateada de auto.webp';
+import politicaImg from '../../images/política de calidad.webp';
+import garantiaImg from '../../images/garantia maindsteel medalla.webp';
+import mexicanoImg from '../../images/100  mexicano.webp';
+import capacidadBg from '../../images/capacidad tecnológica.webp';
+import Image from '../components/Image';
 
 interface HomeViewProps {
   onNavigate: (route: RoutePath) => void;
@@ -34,7 +35,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onOpenQuote }) =
       <section className="relative min-h-[580px] lg:min-h-[660px] flex items-center justify-center overflow-hidden border-b border-zinc-800" id="hero-section">
         {/* Background Visual */}
         <div className="absolute inset-0 z-0">
-          <img 
+          <Image 
             src={manufacturaBg} 
             alt="Manufactura a la Altura" 
             className="w-full h-full object-cover filter brightness-[0.6] contrast-105"
@@ -91,7 +92,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onOpenQuote }) =
             
             <div className="max-w-4xl mx-auto text-center space-y-6 flex flex-col items-center">
               <div className="mb-4 opacity-90 grayscale-[85%] filter brightness-110 mt-[-10px] transform hover:scale-105 transition-transform duration-500">
-                <img src={medallaPlateada} alt="Medalla Plateada" className="w-40 h-40 sm:w-56 sm:h-56 object-contain drop-shadow-xl" />
+                <Image src={medallaPlateada} alt="Medalla Plateada" className="w-40 h-40 sm:w-56 sm:h-56 object-contain drop-shadow-xl" />
               </div>
               <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-light text-justify sm:text-center mt-[-20px]">
                 Desde su fundación en 2006, Maindsteel Automotive se ha posicionado como líder en el diseño y manufactura
@@ -108,7 +109,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onOpenQuote }) =
             {/* Card 1: POLÍTICA DE CALIDAD */}
             <div className="flex flex-col items-center text-center group rounded-xl border border-zinc-800 p-8 sm:p-10 shadow-2xl hover:border-[#d4af37]/40 transition-colors bg-[#0c0d11]">
               <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300 w-36 h-36 flex items-center justify-center">
-                <img src={politicaImg} alt="Política de Calidad" className="w-full h-full object-contain drop-shadow-xl scale-[2.0]" />
+                <Image src={politicaImg} alt="Política de Calidad" className="w-full h-full object-contain drop-shadow-xl scale-[2.0]" />
               </div>
               <h3 className="text-[13px] font-black uppercase tracking-widest text-white mb-4 mt-2">
                 POLÍTICA DE CALIDAD
@@ -121,7 +122,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onOpenQuote }) =
             {/* Card 2: GARANTÍA MAINDSTEEL */}
             <div className="flex flex-col items-center text-center group rounded-xl border border-zinc-800 p-8 sm:p-10 shadow-2xl hover:border-[#d4af37]/40 transition-colors bg-[#0c0d11]">
               <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300 w-36 h-36 flex items-center justify-center">
-                <img src={garantiaImg} alt="Garantía Maindsteel" className="w-full h-full object-contain drop-shadow-xl scale-[1.3]" />
+                <Image src={garantiaImg} alt="Garantía Maindsteel" className="w-full h-full object-contain drop-shadow-xl scale-[1.3]" />
               </div>
               <h3 className="text-[13px] font-black uppercase tracking-widest text-white mb-4 mt-2">
                 GARANTÍA MAINDSTEEL
@@ -134,7 +135,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onOpenQuote }) =
             {/* Card 3: PRODUCTOS 100% MEXICANOS */}
             <div className="flex flex-col items-center text-center group rounded-xl border border-zinc-800 p-8 sm:p-10 shadow-2xl hover:border-[#d4af37]/40 transition-colors bg-[#0c0d11]">
               <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300 w-36 h-36 flex items-center justify-center">
-                <img src={mexicanoImg} alt="Productos 100% Mexicanos" className="w-full h-full object-contain drop-shadow-xl scale-[1.4]" />
+                <Image src={mexicanoImg} alt="Productos 100% Mexicanos" className="w-full h-full object-contain drop-shadow-xl scale-[1.4]" />
               </div>
               <h3 className="text-[13px] font-black uppercase tracking-widest text-white mb-4 mt-2">
                 PRODUCTOS 100% MEXICANOS
@@ -155,7 +156,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onOpenQuote }) =
       <section className="relative py-24 bg-[#0a0b0e] overflow-hidden border-b border-zinc-800" id="tech-capacity-section">
         {/* Background Visual */}
         <div className="absolute inset-0 z-0">
-          <img 
+          <Image 
             src={capacidadBg} 
             alt="Capacidad Tecnológica" 
             className="w-full h-full object-cover filter brightness-[0.7] contrast-105"
@@ -203,7 +204,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onOpenQuote }) =
                 </div>
 
                 <div className="relative overflow-hidden border border-[#d4af37]/60 bg-zinc-950 group h-full shadow-xl">
-                  <img
+                  <Image
                     src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=400&q=80"
                     alt="Tour planta Maindsteel"
                     className="absolute inset-0 w-full h-full object-cover filter brightness-[0.4] group-hover:scale-105 transition-transform duration-500"
@@ -254,7 +255,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onOpenQuote }) =
               >
                 {/* Process Photo Top Banner */}
                 <div className="relative h-44 sm:h-48 w-full overflow-hidden">
-                  <img
+                  <Image
                     src={proc.cardImage || proc.machineryImage}
                     alt={proc.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter brightness-[0.85] contrast-110"

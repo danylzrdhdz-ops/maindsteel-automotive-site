@@ -1,12 +1,13 @@
 import React from 'react';
 import { MapPin, Mail, Shield, Award, CheckCircle2 } from 'lucide-react';
-import tiktokImg from '../../images/tiktok icon.png';
-import linkedinImg from '../../images/linkedin icon.png';
-import instagramImg from '../../images/instagram icon.png';
-import emailImg from '../../images/Email icon.png';
-import facebookImg from '../../images/facebook icon.png';
+import tiktokImg from '../../images/tiktok icon.webp';
+import linkedinImg from '../../images/linkedin icon.webp';
+import instagramImg from '../../images/instagram icon.webp';
+import emailImg from '../../images/Email icon.webp';
+import facebookImg from '../../images/facebook icon.webp';
 import { RoutePath } from '../types';
-import certificacionesImg from '../../images/certificaciones.png';
+import certificacionesImg from '../../images/certificaciones.webp';
+import Image from './Image';
 
 interface FooterProps {
   onNavigate: (route: RoutePath) => void;
@@ -102,7 +103,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 aria-label="TikTok Maindsteel"
                 className="w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center group hover:drop-shadow-[0_2px_8px_rgba(212,175,55,0.6)] transition-all"
               >
-                <img src={tiktokImg} alt="TikTok Maindsteel" className="w-full h-full object-contain transform scale-[4.5] hover:scale-[5] transition-transform duration-300 pointer-events-none" />
+                <Image src={tiktokImg} alt="TikTok Maindsteel" className="w-full h-full object-contain transform scale-[4.5] hover:scale-[5] transition-transform duration-300 pointer-events-none" />
               </a>
               {/* LinkedIn */}
               <a
@@ -112,7 +113,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 aria-label="LinkedIn Maindsteel"
                 className="w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center group hover:drop-shadow-[0_2px_8px_rgba(212,175,55,0.6)] transition-all"
               >
-                <img src={linkedinImg} alt="LinkedIn Maindsteel" className="w-full h-full object-contain transform scale-[4.5] hover:scale-[5] transition-transform duration-300 pointer-events-none" />
+                <Image src={linkedinImg} alt="LinkedIn Maindsteel" className="w-full h-full object-contain transform scale-[4.5] hover:scale-[5] transition-transform duration-300 pointer-events-none" />
               </a>
               {/* Instagram */}
               <a
@@ -122,7 +123,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 aria-label="Instagram Maindsteel"
                 className="w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center group hover:drop-shadow-[0_2px_8px_rgba(212,175,55,0.6)] transition-all"
               >
-                <img src={instagramImg} alt="Instagram Maindsteel" className="w-full h-full object-contain transform scale-[4.5] hover:scale-[5] -translate-y-[4px] transition-transform duration-300 pointer-events-none" />
+                <Image src={instagramImg} alt="Instagram Maindsteel" className="w-full h-full object-contain transform scale-[4.5] hover:scale-[5] -translate-y-[4px] transition-transform duration-300 pointer-events-none" />
               </a>
               {/* Email */}
               <a
@@ -130,7 +131,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 aria-label="Enviar Correo Directo"
                 className="w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center group hover:drop-shadow-[0_2px_8px_rgba(212,175,55,0.6)] transition-all"
               >
-                <img src={emailImg} alt="Email Maindsteel" className="w-full h-full object-contain transform scale-[4.5] hover:scale-[5] transition-transform duration-300 pointer-events-none" />
+                <Image src={emailImg} alt="Email Maindsteel" className="w-full h-full object-contain transform scale-[4.5] hover:scale-[5] transition-transform duration-300 pointer-events-none" />
               </a>
               {/* Facebook */}
               <a
@@ -140,7 +141,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 aria-label="Facebook Maindsteel"
                 className="w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center group hover:drop-shadow-[0_2px_8px_rgba(212,175,55,0.6)] transition-all"
               >
-                <img src={facebookImg} alt="Facebook Maindsteel" className="w-full h-full object-contain transform scale-[4.5] hover:scale-[5] translate-y-[6px] -translate-x-[5px] transition-transform duration-300 pointer-events-none" />
+                <Image src={facebookImg} alt="Facebook Maindsteel" className="w-full h-full object-contain transform scale-[4.5] hover:scale-[5] translate-y-[6px] -translate-x-[5px] transition-transform duration-300 pointer-events-none" />
               </a>
             </div>
           </div>
@@ -151,7 +152,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               Certificaciones
             </h4>
             <div className="pt-2 flex justify-start">
-              <img 
+              <Image 
                 src={certificacionesImg} 
                 alt="Certificaciones Maindsteel" 
                 className="w-auto max-w-[75px] h-auto object-contain drop-shadow-md hover:scale-[1.02] transition-transform duration-300"

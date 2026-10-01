@@ -1,35 +1,35 @@
 import { ProcessDetails } from '../types';
 
-import imgCorteLaser from '../../images/corte laser.png';
-import imgPunzonado from '../../images/punzonado cnc.png';
-import imgDobladoTubo from '../../images/doblado de tubo.png';
-import imgEstampado from '../../images/estampado.png';
-import imgSoldaduraTigMig from '../../images/soldadura tig & mig.png';
-import imgCorteLamina from '../../images/corte de lámina cnc.png';
-import imgSoldaduraProyeccion from '../../images/soldadura por proyección.png';
-import imgDobladoLamina from '../../images/doblado de lámina cnc.png';
-import imgPinturaLiquida from '../../images/pintura líquida en robot.png';
-import imgLineaRecubrimiento from '../../images/linea de recubrimiento.png';
-import imgFabricacionTroqueles from '../../images/fabricación de troqueles.png';
+import imgCorteLaser from '../../images/corte laser.webp';
+import imgPunzonado from '../../images/punzonado cnc.webp';
+import imgDobladoTubo from '../../images/doblado de tubo.webp';
+import imgEstampado from '../../images/estampado.webp';
+import imgSoldaduraTigMig from '../../images/soldadura tig & mig.webp';
+import imgCorteLamina from '../../images/corte de lámina cnc.webp';
+import imgSoldaduraProyeccion from '../../images/soldadura por proyección.webp';
+import imgDobladoLamina from '../../images/doblado de lámina cnc.webp';
+import imgPinturaLiquida from '../../images/pintura líquida en robot.webp';
+import imgLineaRecubrimiento from '../../images/linea de recubrimiento.webp';
+import imgFabricacionTroqueles from '../../images/fabricación de troqueles.webp';
 
-import mmaqCorteLaser from '../../imgs procesos/Nuestra maquinaria Corte laser.png';
-import mventCorteLaser from '../../imgs procesos/Ventajas del corte laser.png';
-import mmaqPunzonado from '../../imgs procesos/Nuestra maquinaria punzonado cnc.png';
-import mventPunzonado from '../../imgs procesos/Ventajas de punzonado cnc.png';
-import mmaqDobladoTubo from '../../imgs procesos/Nuestra maquinaria doblado de tubo.png';
-import mventDobladoTubo from '../../imgs procesos/Ventajas de doblado de tubo.png';
-import mmaqEstampado from '../../imgs procesos/Nuestra maquinaria estampado.png';
-import mventEstampado from '../../imgs procesos/Proceso de estampado.png';
-import mmaqTigMig from '../../imgs procesos/Nuestra maquinaria soldadura tigmig.png';
-import mventTigMig from '../../imgs procesos/ventajas de soldadura tigmig.png';
-import mmaqCorteDoblez from '../../imgs procesos/Nuestra maquinaria cnc.png';
-import mventCorteDoblez from '../../imgs procesos/Proceso de corte y doblez cnc.png';
-import mmaqPinturaLiq from '../../imgs procesos/Pintura líquida con robot proceso.png';
-import TitPintRobot from '../../imgs procesos/Titulo pintura con robot.png';
-import MmaqRobotsApp from '../../imgs procesos/robots de aplicación.png';
+import mmaqCorteLaser from '../../imgs procesos/Nuestra maquinaria Corte laser.webp';
+import mventCorteLaser from '../../imgs procesos/Ventajas del corte laser.webp';
+import mmaqPunzonado from '../../imgs procesos/Nuestra maquinaria punzonado cnc.webp';
+import mventPunzonado from '../../imgs procesos/Ventajas de punzonado cnc.webp';
+import mmaqDobladoTubo from '../../imgs procesos/Nuestra maquinaria doblado de tubo.webp';
+import mventDobladoTubo from '../../imgs procesos/Ventajas de doblado de tubo.webp';
+import mmaqEstampado from '../../imgs procesos/Nuestra maquinaria estampado.webp';
+import mventEstampado from '../../imgs procesos/Proceso de estampado.webp';
+import mmaqTigMig from '../../imgs procesos/Nuestra maquinaria soldadura tigmig.webp';
+import mventTigMig from '../../imgs procesos/ventajas de soldadura tigmig.webp';
+import mmaqCorteDoblez from '../../imgs procesos/Nuestra maquinaria cnc.webp';
+import mventCorteDoblez from '../../imgs procesos/Proceso de corte y doblez cnc.webp';
+import mmaqPinturaLiq from '../../imgs procesos/Pintura líquida con robot proceso.webp';
+import TitPintRobot from '../../imgs procesos/Titulo pintura con robot.webp';
+import MmaqRobotsApp from '../../imgs procesos/robots de aplicación.webp';
 
-import mmaqPinturaElec from '../../imgs procesos/Nuestra maquinaria pintura electroestática.png';
-import mventPinturaElec from '../../imgs procesos/Ventajas de la pintura electroestática.png';
+import mmaqPinturaElec from '../../imgs procesos/Nuestra maquinaria pintura electroestática.webp';
+import mventPinturaElec from '../../imgs procesos/Ventajas de la pintura electroestática.webp';
 export const PROCESSES_DATA: ProcessDetails[] = [
   {
     id: 'corte-laser',

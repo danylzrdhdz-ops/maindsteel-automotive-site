@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Phone, Globe, Menu, X, MessageSquare } from 'lucide-react';
 import { MaindsteelLogo } from './BrandIcons';
 import { RoutePath, AuthUser } from '../types';
-import logoAutomotive from '../../images/logo automotive.png';
+import logoAutomotive from '../../images/logo automotive.webp';
+import Image from './Image';
 
 interface HeaderProps {
   currentRoute: RoutePath;
@@ -83,7 +84,7 @@ export const Header: React.FC<HeaderProps> = ({
           className="flex-shrink-0 cursor-pointer"
           id="header-brand-logo"
         >
-          <img 
+          <Image 
             src={logoAutomotive} 
             alt="Maindsteel Automotive Logo" 
             className="h-12 sm:h-16 w-auto object-contain drop-shadow-sm transition-all"
