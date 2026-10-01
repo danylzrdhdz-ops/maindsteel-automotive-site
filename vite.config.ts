@@ -62,11 +62,23 @@ function aistudioMediaPlugin(): Plugin {
     },
   };
 }
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
+
 // LINT.ThenChange(//depot/google3/java/com/google/alkali/boq/makersuite/applet_dev_service/templates/initializers/react_theme/vite.config.ts:aistudio_media_plugin)
 
 export default defineConfig(() => {
   return {
-    plugins: [react(), tailwindcss(), aistudioMediaPlugin()],
+    plugins: [
+      react(), 
+      tailwindcss(), 
+      aistudioMediaPlugin(),
+      ViteImageOptimizer({
+        webp: { quality: 80, effort: 6 },
+        png: { quality: 80 },
+        jpeg: { quality: 80 },
+        jpg: { quality: 80 }
+      })
+    ],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),

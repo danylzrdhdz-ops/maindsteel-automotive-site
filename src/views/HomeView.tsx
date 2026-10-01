@@ -37,7 +37,9 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onOpenQuote }) =
         <div className="absolute inset-0 z-0">
           <Image 
             src={manufacturaBg} 
-            alt="Manufactura a la Altura" 
+            alt="Manufactura a la Altura"
+            loading="eager"
+            fetchPriority="high" 
             className="w-full h-full object-cover filter brightness-[0.6] contrast-105"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/45 to-black/80" />

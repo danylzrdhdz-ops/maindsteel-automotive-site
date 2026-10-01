@@ -1,27 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React, { lazy, Suspense, useState, useEffect } from 'react';
 import { RoutePath, AuthUser } from './types';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
-import { HomeView } from './views/HomeView';
-import { ProcessesCatalogView } from './views/ProcessesCatalogView';
-import { ProductsView } from './views/ProductsView';
-import { ContactView } from './views/ContactView';
-import { ProcessTemplate } from './components/ProcessTemplate';
 import { AuthModal } from './components/AuthModal';
-import { ChatbotQuotationView } from './views/ChatbotQuotationView';
 import { DataAdminDrawer } from './components/DataAdminDrawer';
 import { getProcessBySlug } from './data/processesData';
 import { authService, subscribeToStore } from './services/store';
 
+// Lazy loaded views for Code Splitting (TBT reduction)
+const HomeView = lazy(() => import('./views/HomeView').then(m => ({ default: m.HomeView })));
+const ProcessesCatalogView = lazy(() => import('./views/ProcessesCatalogView').then(m => ({ default: m.ProcessesCatalogView })));
+const ProductsView = lazy(() => import('./views/ProductsView').then(m => ({ default: m.ProductsView })));
+const ContactView = lazy(() => import('./views/ContactView').then(m => ({ default: m.ContactView })));
+const ProcessTemplate = lazy(() => import('./components/ProcessTemplate').then(m => ({ default: m.ProcessTemplate })));
+const ChatbotQuotationView = lazy(() => import('./views/ChatbotQuotationView').then(m => ({ default: m.ChatbotQuotationView })));
+
 export default function App() {
-  const [currentRoute, setCurrentRoute] = useState<RoutePath>('inicio');
-  const [previousRoute, setPreviousRoute] = useState<RoutePath>('inicio');
-  const [quoteDefaultService, setQuoteDefaultService] = useState<string>('');
-  const [authModalOpen, setAuthModalOpen] = useState(false);
-  const [currentUser, setCurrentUser] = useState<AuthUser | null>(() => authService.getCurrentUser());
+  const [currentRoute, setCurrentRoute] = React.useState<RoutePath>('inicio');
+  const [previousRoute, setPreviousRoute] = React.useState<RoutePath>('inicio');
+  const [quoteDefaultService, setQuoteDefaultService] = React.useState<string>('');
+  const [authModalOpen, setAuthModalOpen] = React.useState(false);
+  const [currentUser, setCurrentUser] = React.useState<AuthUser | null>(() => authService.getCurrentUser());
 
   // Listen for hash changes in browser URL
-  useEffect(() => {
+  React.useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.replace('#', '') as RoutePath;
       if (hash) {
@@ -38,7 +40,7 @@ export default function App() {
   }, []);
 
   // Sync auth state
-  useEffect(() => {
+  React.useEffect(() => {
     const unsubscribe = subscribeToStore(() => {
       setCurrentUser(authService.getCurrentUser());
     });
@@ -151,7 +153,9 @@ export default function App() {
 
       {/* Main View Body */}
       <main className="flex-1 w-full" id="main-view-container">
-        {renderActiveView()}
+        <Suspense fallback={<div className="flex h-[50vh] animate-pulse items-center justify-center text-[#d4af37]">Cargando vista...</div>}>
+          {renderActiveView()}
+        </Suspense>
       </main>
 
       {/* Universal Footer */}
