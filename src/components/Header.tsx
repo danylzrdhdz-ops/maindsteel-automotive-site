@@ -87,6 +87,8 @@ export const Header: React.FC<HeaderProps> = ({
           <Image 
             src={logoAutomotive} 
             alt="Maindsteel Automotive Logo" 
+            loading="eager"
+            fetchPriority="high"
             className="h-12 sm:h-16 w-auto object-contain drop-shadow-sm transition-all"
           />
         </div>

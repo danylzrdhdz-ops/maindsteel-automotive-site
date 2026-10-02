@@ -7,8 +7,10 @@ import { DataAdminDrawer } from './components/DataAdminDrawer';
 import { getProcessBySlug } from './data/processesData';
 import { authService, subscribeToStore } from './services/store';
 
+// Eager load for initial view to reduce LCP (Largest Contentful Paint) penalty in PageSpeed Insights
+import { HomeView } from './views/HomeView';
+
 // Lazy loaded views for Code Splitting (TBT reduction)
-const HomeView = lazy(() => import('./views/HomeView').then(m => ({ default: m.HomeView })));
 const ProcessesCatalogView = lazy(() => import('./views/ProcessesCatalogView').then(m => ({ default: m.ProcessesCatalogView })));
 const ProductsView = lazy(() => import('./views/ProductsView').then(m => ({ default: m.ProductsView })));
 const ContactView = lazy(() => import('./views/ContactView').then(m => ({ default: m.ContactView })));
