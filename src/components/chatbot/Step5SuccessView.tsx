@@ -433,13 +433,6 @@ PLANTA: Maindsteel Automotive - Planta PIVA Aguascalientes Tier 2
               <RefreshCw className="w-3.5 h-3.5" />
               Nueva Cotización
             </button>
-            <button
-              onClick={onGoHome}
-              className="px-3.5 py-1.5 text-xs text-black font-extrabold tracking-wider uppercase bg-[#F1B434] hover:bg-[#E5A824] rounded border border-transparent flex items-center gap-1.5 transition-all cursor-pointer shadow-[0_0_10px_rgba(229,168,36,0.3)] active:scale-95"
-            >
-              <Home className="w-3.5 h-3.5 stroke-[2.5]" />
-              Ir al Inicio
-            </button>
           </div>
         </div>
       </div>

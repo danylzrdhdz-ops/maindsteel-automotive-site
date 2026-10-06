@@ -16,7 +16,8 @@ import {
   CornerDownLeft, 
   ChevronRight,
   Bot,
-  ArrowLeft
+  ArrowLeft,
+  Home
 } from 'lucide-react';
 
 const INITIAL_BOT_MESSAGE: ChatMessage = {
@@ -622,16 +623,27 @@ export const ChatbotQuotationView: React.FC<ChatbotQuotationViewProps> = ({ onBa
               </div>
             </div>
 
-            {/* Botón de color dorado "Atrás" */}
+            {/* Botón de color dorado "Atrás" / "Ir al Inicio" */}
             <div className="mt-4 flex items-center justify-start pb-4">
-              <button
-                type="button"
-                onClick={handleGoBack}
-                className="px-5 py-2.5 bg-[#E5A824] hover:bg-[#F1B434] active:scale-95 text-black font-extrabold text-xs uppercase tracking-wider rounded-md flex items-center gap-2 shadow-[0_4px_16px_rgba(229,168,36,0.3)] hover:shadow-[0_6px_22px_rgba(229,168,36,0.5)] transition-all cursor-pointer font-sans"
-              >
-                <ArrowLeft className="w-4 h-4 stroke-[2.5]" />
-                <span>Atrás</span>
-              </button>
+              {currentStep === 5 ? (
+                <button
+                  type="button"
+                  onClick={onGoHome}
+                  className="px-5 py-2.5 bg-[#E5A824] hover:bg-[#F1B434] active:scale-95 text-black font-extrabold text-xs uppercase tracking-wider rounded-md flex items-center gap-2 shadow-[0_4px_16px_rgba(229,168,36,0.3)] hover:shadow-[0_6px_22px_rgba(229,168,36,0.5)] transition-all cursor-pointer font-sans"
+                >
+                  <Home className="w-4 h-4 stroke-[2.5]" />
+                  <span>Ir al Inicio</span>
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  onClick={handleGoBack}
+                  className="px-5 py-2.5 bg-[#E5A824] hover:bg-[#F1B434] active:scale-95 text-black font-extrabold text-xs uppercase tracking-wider rounded-md flex items-center gap-2 shadow-[0_4px_16px_rgba(229,168,36,0.3)] hover:shadow-[0_6px_22px_rgba(229,168,36,0.5)] transition-all cursor-pointer font-sans"
+                >
+                  <ArrowLeft className="w-4 h-4 stroke-[2.5]" />
+                  <span>Atrás</span>
+                </button>
+              )}
             </div>
           </div>
       </main>
