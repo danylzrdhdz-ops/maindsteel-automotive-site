@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Phone, Globe, Menu, X, MessageSquare } from 'lucide-react';
 import { MaindsteelLogo } from './BrandIcons';
 import { RoutePath, AuthUser } from '../types';
@@ -20,48 +21,20 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenAuth,
   onOpenQuote
 }) => {
+  const { t, i18n } = useTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showPhoneTooltip, setShowPhoneTooltip] = useState(false);
 
-  const handleTranslateToEnglish = () => {
-    // Si ya agregamos el script, no lo volvemos a agregar
-    if (document.getElementById('google-translate-script')) return;
-
-    // 1. Agregamos un contenedor oculto para el widget de Google
-    const div = document.createElement('div');
-    div.id = 'google_translate_element';
-    div.style.display = 'none';
-    document.body.appendChild(div);
-
-    // 2. Definimos la función de inicialización requerida por Google
-    (window as any).googleTranslateElementInit = () => {
-      new (window as any).google.translate.TranslateElement(
-        { pageLanguage: 'es', includedLanguages: 'en', autoDisplay: false },
-        'google_translate_element'
-      );
-
-      // 3. Forzamos la selección del idioma inglés de forma automática
-      setTimeout(() => {
-        const selectElement = document.querySelector('.goog-te-combo') as HTMLSelectElement | null;
-        if (selectElement) {
-          selectElement.value = 'en';
-          selectElement.dispatchEvent(new Event('change'));
-        }
-      }, 500); // Damos un pequeño margen para que el widget renderice
-    };
-
-    // 4. Inyectamos el script de Google Translate
-    const script = document.createElement('script');
-    script.id = 'google-translate-script';
-    script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-    document.body.appendChild(script);
+  const handleTranslateToggle = () => {
+    const newLang = i18n.language === 'es' ? 'en' : 'es';
+    i18n.changeLanguage(newLang);
   };
 
   const navLinks: { label: string; route: RoutePath }[] = [
-    { label: 'INICIO', route: 'inicio' },
-    { label: 'PROCESOS', route: 'procesos' },
-    { label: 'PRODUCTOS', route: 'productos' },
-    { label: 'CONTACTO', route: 'contacto' }
+    { label: t('header.nav.home'), route: 'inicio' },
+    { label: t('header.nav.processes'), route: 'procesos' },
+    { label: t('header.nav.products'), route: 'productos' },
+    { label: t('header.nav.contact'), route: 'contacto' }
   ];
 
   const isCurrentActive = (route: RoutePath) => {
@@ -123,13 +96,13 @@ export const Header: React.FC<HeaderProps> = ({
           <div className="relative">
             <button
               type="button"
-              onClick={handleTranslateToEnglish}
+              onClick={handleTranslateToggle}
               className="flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-semibold text-zinc-300 hover:text-white hover:bg-zinc-800/80 border border-zinc-800 transition-colors"
-              title="Traducir a Inglés"
+              title="Alternar Idioma / Toggle Language"
               id="lang-selector-btn"
             >
               <Globe className="w-3.5 h-3.5 text-[#d4af37]" />
-              <span>EN</span>
+              <span>{i18n.language === 'es' ? 'EN' : 'ES'}</span>
             </button>
           </div>
 
@@ -150,7 +123,7 @@ export const Header: React.FC<HeaderProps> = ({
             {showPhoneTooltip && (
               <div className="absolute right-0 top-full mt-2 w-56 p-3 bg-[#16181f] border border-[#d4af37]/60 rounded-md shadow-2xl z-50 text-xs animate-in fade-in">
                 <span className="text-[10px] uppercase font-bold text-[#d4af37] block mb-1">
-                  Atención Inmediata
+                  {t('header.attention')}
                 </span>
                 <a
                   href="tel:+524491581709"
@@ -159,7 +132,7 @@ export const Header: React.FC<HeaderProps> = ({
                   +52-449-158-17-09
                 </a>
                 <span className="text-[10px] text-zinc-400 block mt-1">
-                  Lun - Vie: 8:00 AM - 6:00 PM CST
+                  {t('header.schedule')}
                 </span>
               </div>
             )}
@@ -172,7 +145,7 @@ export const Header: React.FC<HeaderProps> = ({
             id="header-quote-btn"
           >
             <MessageSquare className="w-3.5 h-3.5" />
-            <span>SOLICITAR COTIZACIÓN</span>
+            <span>{t('header.quote_btn')}</span>
           </button>
         </div>
 
@@ -221,8 +194,8 @@ export const Header: React.FC<HeaderProps> = ({
             <span className="flex items-center gap-1">
               <Phone className="w-3.5 h-3.5 text-[#d4af37]" /> +52-449-158-17-09
             </span>
-            <span className="flex items-center gap-1">
-              <Globe className="w-3.5 h-3.5 text-[#d4af37]" /> EN
+            <span className="flex items-center gap-1" onClick={handleTranslateToggle}>
+              <Globe className="w-3.5 h-3.5 text-[#d4af37]" /> {i18n.language === 'es' ? 'EN' : 'ES'}
             </span>
           </div>
         </div>

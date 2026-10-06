@@ -1,4 +1,5 @@
 import React, { lazy, Suspense, useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { RoutePath, AuthUser } from './types';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
@@ -18,6 +19,7 @@ const ProcessTemplate = lazy(() => import('./components/ProcessTemplate').then(m
 const ChatbotQuotationView = lazy(() => import('./views/ChatbotQuotationView').then(m => ({ default: m.ChatbotQuotationView })));
 
 export default function App() {
+  const { t } = useTranslation();
   const [currentRoute, setCurrentRoute] = React.useState<RoutePath>('inicio');
   const [previousRoute, setPreviousRoute] = React.useState<RoutePath>('inicio');
   const [quoteDefaultService, setQuoteDefaultService] = React.useState<string>('');
@@ -119,13 +121,13 @@ export default function App() {
       // Fallback if slug not found
       return (
         <div className="min-h-[60vh] flex flex-col items-center justify-center p-8 text-center bg-[#0a0b0e] text-zinc-300">
-          <h2 className="text-2xl font-bold text-white mb-2">Proceso no encontrado</h2>
-          <p className="text-sm text-zinc-400 mb-6">El proceso especificado no se encuentra en el catálogo actual.</p>
+          <h2 className="text-2xl font-bold text-white mb-2">{t('app.not_found')}</h2>
+          <p className="text-sm text-zinc-400 mb-6">{t('app.not_found_desc')}</p>
           <button
             onClick={() => navigateTo('procesos')}
             className="px-6 py-2.5 bg-[#b8860b] text-white font-bold rounded uppercase text-xs"
           >
-            Ver Catálogo de Procesos
+            {t('app.view_catalog')}
           </button>
         </div>
       );
@@ -139,9 +141,7 @@ export default function App() {
       {/* Top Banner indicating local persistence */}
       <div className="bg-[#12141c] border-b border-zinc-800/80 px-4 py-1.5 text-center text-[11px] text-zinc-400 flex items-center justify-center gap-2">
         <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-        <span>
-          Plataforma Maindsteel Automotive activa en modo seguro con almacenamiento local.
-        </span>
+        <span>{t('app.secure_mode')}</span>
       </div>
 
       {/* Main Header */}
@@ -155,7 +155,7 @@ export default function App() {
 
       {/* Main View Body */}
       <main className="flex-1 w-full" id="main-view-container">
-        <Suspense fallback={<div className="flex h-[50vh] animate-pulse items-center justify-center text-[#d4af37]">Cargando vista...</div>}>
+        <Suspense fallback={<div className="flex h-[50vh] animate-pulse items-center justify-center text-[#d4af37]">{t('app.loading')}</div>}>
           {renderActiveView()}
         </Suspense>
       </main>

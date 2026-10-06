@@ -1,0 +1,31 @@
+{
+  "header": {
+    "nav": {
+      "home": "HOME",
+      "processes": "PROCESSES",
+      "products": "PRODUCTS",
+      "contact": "CONTACT"
+    },
+    "attention": "Immediate Attention",
+    "schedule": "Mon - Fri: 8:00 AM - 6:00 PM CST",
+    "quote_btn": "REQUEST QUOTE"
+  },
+  "app": {
+    "secure_mode": "Maindsteel Automotive Platform active in safe mode with local storage.",
+    "loading": "Loading view...",
+    "not_found": "Process not found",
+    "not_found_desc": "The specified process is not found in the current catalog.",
+    "view_catalog": "View Process Catalog"
+  },
+  "footer": {
+    "title_menu": "Menu",
+    "title_contact": "Contact",
+    "title_social": "Social Media",
+    "title_cert": "Certifications",
+    "social_desc": "Follow us on our corporate platforms to learn about new releases and technological investments:",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "cnc": "CNC Capabilities",
+    "location": "PIVA Plant Location"
+  }
+}

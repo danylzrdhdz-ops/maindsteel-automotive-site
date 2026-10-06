@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { MapPin, Mail, Shield, Award, CheckCircle2 } from 'lucide-react';
 import tiktokImg from '../../images/tiktok icon.webp';
 import linkedinImg from '../../images/linkedin icon.webp';
@@ -14,6 +15,7 @@ interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
+  const { t } = useTranslation();
   return (
     <footer className="w-full bg-[#08090c] border-t border-zinc-800 text-zinc-300 pt-16 pb-12" id="main-footer">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -22,7 +24,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           {/* Column 1: MENU */}
           <div className="space-y-4" id="footer-menu-col">
             <h4 className="text-sm font-bold uppercase tracking-wider text-white border-b border-[#d4af37] pb-2 inline-block">
-              Menú
+              {t('footer.title_menu')}
             </h4>
             <ul className="space-y-2.5 text-sm">
               <li>
@@ -30,7 +32,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   onClick={() => onNavigate('inicio')}
                   className="text-zinc-400 hover:text-[#f5d47a] transition-colors"
                 >
-                  INICIO
+                  {t('header.nav.home')}
                 </button>
               </li>
               <li>
@@ -38,7 +40,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   onClick={() => onNavigate('procesos')}
                   className="text-zinc-400 hover:text-[#f5d47a] transition-colors"
                 >
-                  PROCESOS
+                  {t('header.nav.processes')}
                 </button>
               </li>
               <li>
@@ -46,7 +48,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   onClick={() => onNavigate('productos')}
                   className="text-zinc-400 hover:text-[#f5d47a] transition-colors"
                 >
-                  PRODUCTOS
+                  {t('header.nav.products')}
                 </button>
               </li>
               <li>
@@ -54,7 +56,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   onClick={() => onNavigate('contacto')}
                   className="text-zinc-400 hover:text-[#f5d47a] transition-colors"
                 >
-                  CONTACTO
+                  {t('header.nav.contact')}
                 </button>
               </li>
             </ul>
@@ -63,7 +65,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           {/* Column 2: CONTACTO */}
           <div className="space-y-4" id="footer-contact-col">
             <h4 className="text-sm font-bold uppercase tracking-wider text-white border-b border-[#d4af37] pb-2 inline-block">
-              Contacto
+              {t('footer.title_contact')}
             </h4>
             <div className="flex items-start gap-3 text-xs leading-relaxed text-zinc-400">
               <MapPin className="w-5 h-5 text-[#d4af37] flex-shrink-0 mt-0.5" />
@@ -89,10 +91,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           {/* Column 3: REDES SOCIALES */}
           <div className="space-y-4" id="footer-social-col">
             <h4 className="text-sm font-bold uppercase tracking-wider text-white border-b border-[#d4af37] pb-2 inline-block">
-              Redes Sociales
+              {t('footer.title_social')}
             </h4>
             <p className="text-xs text-zinc-400">
-              Síguenos en nuestras plataformas corporativas para conocer nuevos lanzamientos e inversiones tecnológicas:
+              {t('footer.social_desc')}
             </p>
             <div className="flex items-center justify-start gap-4 sm:gap-6 pt-4">
               {/* TikTok */}
@@ -149,7 +151,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           {/* Column 4: CERTIFICACIONES Y ALIANZAS */}
           <div className="space-y-4" id="footer-certifications-col">
             <h4 className="text-sm font-bold uppercase tracking-wider text-white border-b border-[#d4af37] pb-2 inline-block">
-              Certificaciones
+              {t('footer.title_cert')}
             </h4>
             <div className="pt-2 flex justify-start">
               <Image 
@@ -164,16 +166,16 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
         {/* Bottom bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 gap-4">
-          <p>© {new Date().getFullYear()} Maindsteel Automotive. Todos los derechos reservados.</p>
+          <p>© {new Date().getFullYear()} Maindsteel Automotive. {t('footer.rights')}</p>
           <div className="flex items-center gap-6">
             <button onClick={() => onNavigate('contacto')} className="hover:text-[#f5d47a]">
-              Aviso de Privacidad
+              {t('footer.privacy')}
             </button>
             <button onClick={() => onNavigate('procesos')} className="hover:text-[#f5d47a]">
-              Capacidades CNC
+              {t('footer.cnc')}
             </button>
             <button onClick={() => onNavigate('contacto')} className="hover:text-[#f5d47a]">
-              Ubicación Planta PIVA
+              {t('footer.location')}
             </button>
           </div>
         </div>

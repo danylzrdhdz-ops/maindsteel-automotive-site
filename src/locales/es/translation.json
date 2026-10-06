@@ -1,0 +1,31 @@
+{
+  "header": {
+    "nav": {
+      "home": "INICIO",
+      "processes": "PROCESOS",
+      "products": "PRODUCTOS",
+      "contact": "CONTACTO"
+    },
+    "attention": "Atención Inmediata",
+    "schedule": "Lun - Vie: 8:00 AM - 6:00 PM CST",
+    "quote_btn": "SOLICITAR COTIZACIÓN"
+  },
+  "app": {
+    "secure_mode": "Plataforma Maindsteel Automotive activa en modo seguro con almacenamiento local.",
+    "loading": "Cargando vista...",
+    "not_found": "Proceso no encontrado",
+    "not_found_desc": "El proceso especificado no se encuentra en el catálogo actual.",
+    "view_catalog": "Ver Catálogo de Procesos"
+  },
+  "footer": {
+    "title_menu": "Menú",
+    "title_contact": "Contacto",
+    "title_social": "Redes Sociales",
+    "title_cert": "Certificaciones",
+    "social_desc": "Síguenos en nuestras plataformas corporativas para conocer nuevos lanzamientos e inversiones tecnológicas:",
+    "rights": "Todos los derechos reservados.",
+    "privacy": "Aviso de Privacidad",
+    "cnc": "Capacidades CNC",
+    "location": "Ubicación Planta PIVA"
+  }
+}
