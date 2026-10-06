@@ -1,4 +1,5 @@
 import { ProductItem } from '../types';
+import { useTranslation } from 'react-i18next';
 
 import imgProdDobladoTubo from '../../imgs productos/Doblado de tubo producto.webp';
 import imgDoblado1 from '../../imgs productos/Doblado de tubo 1.webp';
@@ -26,7 +27,7 @@ import imgCarro1 from '../../imgs productos/carro de manejo 1.webp';
 import imgCarro2 from '../../imgs productos/Carro de manejo 2.webp';
 import imgCarro3 from '../../imgs productos/carro de manejo 3.webp';
 
-export const PRODUCTS_DATA: ProductItem[] = [
+export const PRODUCTS_DATA_ES: ProductItem[] = [
   {
     id: 'prod-doblado-tubo',
     title: 'DOBLADO DE TUBO',
@@ -148,3 +149,131 @@ export const PRODUCTS_DATA: ProductItem[] = [
   }
 ];
 
+export const PRODUCTS_DATA_EN: ProductItem[] = [
+  {
+    id: 'prod-doblado-tubo',
+    title: 'TUBE BENDING',
+    category: 'tubo-alambre',
+    categoryLabel: 'TUBE BENDING AND WIRE FORMING',
+    image: imgProdDobladoTubo,
+    images: [imgDoblado1, imgDoblado2, imgDoblado3],
+    description: 'Cold-formed tubular components with multi-radius CNC bending machines with and without internal mandrel for fluid lines, seat structures and stabilizer bars.',
+    features: [
+      'No wrinkling or oval section deformation',
+      'Continuous multi-axis 3D spatial bending',
+      'Ends with flaring, upsetting or punching',
+      'Compliance with OEM automotive specifications'
+    ],
+    materials: ['Carbon steel (1010, 1020)', 'Stainless steel 304/316', 'Aluminum 6061-T6'],
+    tolerance: '± 0.25° angular / ± 0.3 mm geometric'
+  },
+  {
+    id: 'prod-formado-alambre',
+    title: 'WIRE FORMING',
+    category: 'tubo-alambre',
+    categoryLabel: 'TUBE BENDING AND WIRE FORMING',
+    image: imgProdFormadoAlambre,
+    images: [imgFormado1, imgProdFormadoAlambre],
+    description: 'High strength wire brackets, drive rods and clips formed on CNC automatic benders with threading, chamfering and heat treatment.',
+    features: [
+      'Wire from 1/8" to 1/2" gauge',
+      'High speed and repeatability 3D bending',
+      'Electrogalvanized or tropicalized anticorrosive finish',
+      'Design for quick body assembly'
+    ],
+    materials: ['Soft and half-hard drawn steel', '1070 spring steel', 'Stainless steel'],
+    tolerance: '± 0.2 mm'
+  },
+  {
+    id: 'prod-soldadura-tig-mig',
+    title: 'TIG & MIG AND PROJECTION WELDING',
+    category: 'soldadura',
+    categoryLabel: 'TIG & MIG AND PROJECTION WELDING',
+    image: imgProdSoldaduraTigMig,
+    images: [imgProdSoldaduraTigMig],
+    description: 'High mechanical integrity structural welded subassemblies for suspensions, engine mounts and automotive crossmembers.',
+    features: [
+      'Low spatter pulsed synergic MIG process',
+      'Precision TIG welding for light alloys',
+      'Dedicated Poke-Yoke fixtures',
+      'Torsion and metallographic macroetch testing'
+    ],
+    materials: ['Structural steel A36 / HSLA', 'Stainless steel', 'Aluminum 5000/6000'],
+    tolerance: 'AWS D1.1 standard / ISO 5817 Level B'
+  },
+  {
+    id: 'prod-estaciones-trabajo',
+    title: 'WORKSTATIONS',
+    category: 'estaciones',
+    categoryLabel: 'WORKSTATIONS',
+    image: imgProdEstacionesTrabajo,
+    images: [imgEstaciones1, imgEstaciones2],
+    description: 'Ergonomic assembly tables and cells custom designed under Lean Manufacturing principles and 5S methodology for automotive lines.',
+    features: [
+      'Electric or manual height adjustment for operators',
+      'Integrated LED lighting and rails for balancers',
+      'ESD antistatic surfaces or heavy duty metal plate',
+      'Integrated pneumatic and electrical channeling'
+    ],
+    materials: ['Tubular steel structural profile', 'Phenol / UHMW / Steel covers'],
+    tolerance: 'Load capacity up to 1,500 kg distributed'
+  },
+  {
+    id: 'prod-racks-manejo',
+    title: 'MATERIAL HANDLING RACKS',
+    category: 'racks',
+    categoryLabel: 'RACKS',
+    image: imgProdRacksManejo,
+    images: [imgRacks1, imgRacks2],
+    description: 'Collapsible and fixed metal containers and racks for transporting chassis parts, dashboards, bumpers and glass between plants.',
+    features: [
+      'Virgin polyurethane and polyethylene dunnage protections',
+      'Stackable up to 4 levels in finished product warehouse',
+      'Forklift pockets with safety guides',
+      'High resistance electrostatic paint finish'
+    ],
+    materials: ['ASTM A500 square tubular steel', 'Laser cut sheet metal'],
+    tolerance: '± 1.0 mm at stacking centering points'
+  },
+  {
+    id: 'prod-componentes-metalicos',
+    title: 'MATERIAL HANDLING CONTAINERS',
+    category: 'componentes',
+    categoryLabel: 'MATERIAL HANDLING CONTAINERS',
+    image: imgProdComponentesMetalicos,
+    images: [imgContenedores1, imgProdComponentesMetalicos],
+    description: 'Brackets, mounting brackets, flanges and hardware manufactured by laser cutting, stamping and CNC punching for body assembly.',
+    features: [
+      'Mechanical bevelling and chamfering for zero sharp edges',
+      'Tight geometric tolerances under ISO 2768-m standard',
+      'Surface treatments: cataphoresis (KTL) or galvanized',
+      'Laser marking for traceability by Datamatrix code'
+    ],
+    materials: ['Carbon steel SAE 1018, 1045, HSLA 340/420', 'Aluminum 5052'],
+    tolerance: '± 0.1 mm'
+  },
+  {
+    id: 'prod-carros-manejo',
+    title: 'MATERIAL HANDLING CARTS',
+    category: 'carros',
+    categoryLabel: 'MATERIAL HANDLING CARTS',
+    image: imgProdCarrosManejo,
+    images: [imgCarro1, imgCarro2, imgCarro3],
+    description: 'Tugger train style towable carts and manual carts for Just-in-Time component supply to the assembly line.',
+    features: [
+      'Industrial polyurethane steering wheels with directional brake',
+      'Articulated drawbar hitch for tugger trains',
+      'Dead man brake and perimeter protections',
+      'Turning capacity in narrow aisles without skidding'
+    ],
+    materials: ['Reinforced tubular steel structure', 'Anti-slip plates'],
+    tolerance: 'Load capacity 800 - 2,500 kg'
+  }
+];
+
+export const PRODUCTS_DATA = PRODUCTS_DATA_ES;
+
+export const useProducts = () => {
+  const { i18n } = useTranslation();
+  return i18n.language === 'en' ? PRODUCTS_DATA_EN : PRODUCTS_DATA_ES;
+};

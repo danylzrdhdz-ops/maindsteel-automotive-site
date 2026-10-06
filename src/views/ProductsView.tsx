@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ProductItem } from '../types';
-import { PRODUCTS_DATA } from '../data/productsData';
+import { useProducts } from '../data/productsData';
 import { ProductDetailModal } from '../components/ProductDetailModal';
 import Image from '../components/Image';
 
@@ -9,22 +10,24 @@ interface ProductsViewProps {
 }
 
 export const ProductsView: React.FC<ProductsViewProps> = ({ onOpenQuote }) => {
+  const { t } = useTranslation();
+  const productsData = useProducts();
   const [activeFilter, setActiveFilter] = useState<string>('TODO');
   const [selectedProduct, setSelectedProduct] = useState<ProductItem | null>(null);
 
   const filters = [
-    { label: 'TODO', key: 'TODO' },
-    { label: 'DOBLADO DE TUBO Y FORMADO DE ALAMBRE', key: 'tubo-alambre' },
-    { label: 'RACKS', key: 'racks' },
-    { label: 'CARROS PARA MANEJO DE MATERIAL', key: 'carros' },
-    { label: 'ESTACIONES DE TRABAJO', key: 'estaciones' },
-    { label: 'CONTENEDORES PARA MANEJO DE MATERIAL', key: 'componentes' },
-    { label: 'SOLDADURA TIG & MIG Y POR PROYECCIÓN', key: 'soldadura' }
+    { label: t('product_catalog.filter_all'), key: 'TODO' },
+    { label: t('product_catalog.filter_tubo'), key: 'tubo-alambre' },
+    { label: t('product_catalog.filter_racks'), key: 'racks' },
+    { label: t('product_catalog.filter_carros'), key: 'carros' },
+    { label: t('product_catalog.filter_estaciones'), key: 'estaciones' },
+    { label: t('product_catalog.filter_componentes'), key: 'componentes' },
+    { label: t('product_catalog.filter_soldadura'), key: 'soldadura' }
   ];
 
   const filteredProducts = activeFilter === 'TODO'
-    ? PRODUCTS_DATA
-    : PRODUCTS_DATA.filter((p) => p.category === activeFilter);
+    ? productsData
+    : productsData.filter((p) => p.category === activeFilter);
 
   // Dynamic Tailwind Grid adjustment so that 8 products, 1 product, 2 products, etc. look mathematically balanced
   const getDynamicGridClasses = (count: number) => {
@@ -51,11 +54,11 @@ export const ProductsView: React.FC<ProductsViewProps> = ({ onOpenQuote }) => {
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-wider drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
-            CATÁLOGO DE <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d4af37] via-[#f5d47a] to-[#d4af37]">PRODUCTOS</span>
+            {t('product_catalog.title_part1')}<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d4af37] via-[#f5d47a] to-[#d4af37]">{t('product_catalog.title_highlight')}</span>
           </h1>
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent mx-auto mt-4" />
           <p className="mt-3 text-xs sm:text-sm text-zinc-300 uppercase tracking-widest font-light">
-            Componentes automotrices, racks logísticos y ensambles metálicos de precisión
+            {t('product_catalog.subtitle')}
           </p>
         </div>
       </section>
@@ -122,7 +125,7 @@ export const ProductsView: React.FC<ProductsViewProps> = ({ onOpenQuote }) => {
                     className="w-full py-3 bg-[#b8860b] hover:bg-[#d4af37] text-black text-xs font-black uppercase tracking-widest transition-all shadow-md"
                     id={`btn-cotizar-${product.id}`}
                   >
-                    COTIZAR
+                    {t('product_catalog.btn_quote')}
                   </button>
 
                   <button
@@ -130,7 +133,7 @@ export const ProductsView: React.FC<ProductsViewProps> = ({ onOpenQuote }) => {
                     className="w-full py-3 bg-black hover:bg-zinc-900 border border-[#d4af37]/80 hover:border-[#d4af37] text-white hover:text-[#f5d47a] text-xs font-bold uppercase tracking-widest transition-all"
                     id={`btn-detalles-${product.id}`}
                   >
-                    VER DETALLES
+                    {t('product_catalog.btn_details')}
                   </button>
                 </div>
               </div>
