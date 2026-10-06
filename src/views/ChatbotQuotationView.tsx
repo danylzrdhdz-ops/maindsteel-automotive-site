@@ -35,10 +35,11 @@ const INITIAL_BOT_MESSAGE: ChatMessage = {
 
 interface ChatbotQuotationViewProps {
   onBack: () => void;
+  onGoHome: () => void;
   initialItem?: string;
 }
 
-export const ChatbotQuotationView: React.FC<ChatbotQuotationViewProps> = ({ onBack, initialItem }) => {
+export const ChatbotQuotationView: React.FC<ChatbotQuotationViewProps> = ({ onBack, onGoHome, initialItem }) => {
   const [messages, setMessages] = useState<ChatMessage[]>([INITIAL_BOT_MESSAGE]);
   const [currentStep, setCurrentStep] = useState<StepNumber>(1);
   const [inputText, setInputText] = useState('');
@@ -463,6 +464,7 @@ export const ChatbotQuotationView: React.FC<ChatbotQuotationViewProps> = ({ onBa
                     rfq={finalizedRfq}
                     onRestart={handleResetChat}
                     onOpenHistory={() => setIsHistoryOpen(true)}
+                    onGoHome={onGoHome}
                   />
                 ) : (
                   <>
