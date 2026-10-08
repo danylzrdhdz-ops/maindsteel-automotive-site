@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Award } from 'lucide-react';
 import { RoutePath } from '../types';
 import manufacturaBg from '../../images/manufactura ala altura de la empresa.webp';
 import medallaPlateada from '../../images/medalla plateada de auto.webp';
@@ -65,6 +66,11 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onOpenQuote }) =
 
         {/* Hero Content */}
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+          {/* Gold Certified Pill */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#13151b]/90 border border-[#d4af37]/60 mb-6 text-xs uppercase tracking-widest text-[#f5d47a] shadow-xl">
+            <Award className="w-3.5 h-3.5 text-[#d4af37]" />
+            <span className="font-semibold">{t('home.hero_pill')}</span>
+          </div>
 
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white uppercase tracking-tight leading-tight sm:leading-none drop-shadow-[0_6px_30px_rgba(0,0,0,0.9)]">
             {t('home.hero_title_part1')}
