@@ -27,13 +27,13 @@ export const BotBubble: React.FC<BotBubbleProps> = ({
   return (
     <div className="flex flex-col items-start gap-1 mb-5 select-text">
       {/* Bot Subtitle */}
-      <div className="flex items-center gap-2 text-[10px] text-neutral-400 uppercase tracking-widest font-mono-tech ml-1">
+      <div className="flex items-center gap-2 text-xs text-neutral-300 uppercase tracking-widest font-mono-tech ml-1">
         <span className="text-[#E5A824] font-bold">Maindsteel Bot</span>
-        <span className="text-neutral-600">·</span>
+        <span className="text-neutral-500">·</span>
         <span>Paso 0{step}</span>
         {timestamp && (
           <>
-            <span className="text-neutral-600">·</span>
+            <span className="text-neutral-500">·</span>
             <span>{timestamp}</span>
           </>
         )}
@@ -50,23 +50,23 @@ export const BotBubble: React.FC<BotBubbleProps> = ({
         {/* Header container line */}
         <div className="px-4 py-2 border-b border-[#E5A824]/30 bg-gradient-to-r from-[#1C180E] via-[#121316] to-[#0D0E11] flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="text-xs sm:text-sm font-bold text-[#F1B434] tracking-wide flex items-center gap-2">
+            <span className="text-sm sm:text-base font-bold text-[#F1B434] tracking-wide flex items-center gap-2">
               {title}
             </span>
           </div>
-          <span className="text-[10px] font-mono-tech text-neutral-400 uppercase tracking-wider">
+          <span className="text-xs font-mono-tech text-neutral-300 uppercase tracking-wider font-semibold">
             Aguascalientes Tier 2
           </span>
         </div>
 
         {/* Message lines: Maximum 1 line per bubble row rule */}
-        <div className="px-4 py-3 space-y-1 bg-black/50 font-mono-tech text-neutral-200 text-xs sm:text-sm">
+        <div className="px-4 py-3 space-y-1.5 bg-black/50 font-mono-tech text-neutral-100 text-sm sm:text-base">
           {lines.map((line, idx) => (
             <div
               key={idx}
               className="py-0.5 tracking-tight border-b border-[#E5A824]/10 last:border-none flex items-center gap-2"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#E5A824] shrink-0" />
+              <span className="w-2 h-2 rounded-full bg-[#E5A824] shrink-0" />
               <span className="truncate block font-medium">{line}</span>
             </div>
           ))}

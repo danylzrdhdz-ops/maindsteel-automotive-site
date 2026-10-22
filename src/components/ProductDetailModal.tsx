@@ -32,16 +32,16 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
         {/* Modal Header */}
         <div className="flex items-center justify-between p-5 border-b border-zinc-800">
           <div>
-            <span className="text-[10px] uppercase font-bold text-[#d4af37] tracking-widest block mb-1">
+            <span className="text-xs uppercase font-bold text-[#f5d47a] tracking-widest block mb-1">
               {product.categoryLabel}
             </span>
-            <h3 className="text-xl font-black text-white uppercase tracking-wider">
+            <h3 className="text-2xl font-black text-white uppercase tracking-wider">
               {product.title}
             </h3>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 text-zinc-400 hover:text-white rounded-md hover:bg-zinc-800 transition-colors"
+            className="p-1.5 text-zinc-300 hover:text-white rounded-md hover:bg-zinc-800 transition-colors cursor-pointer"
             id="product-modal-close-btn"
           >
             <X className="w-5 h-5" />
@@ -59,29 +59,29 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
             <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between z-10">
-              <span className="text-xs font-mono text-[#f5d47a] bg-black/70 px-2.5 py-1 rounded border border-[#d4af37]/30">
+              <span className="text-xs font-mono font-bold text-[#f5d47a] bg-black/85 px-3 py-1 rounded border border-[#d4af37]/50 shadow">
                 Tolerancia: {product.tolerance}
               </span>
-              <span className="text-xs font-semibold text-white bg-black/70 px-2.5 py-1 rounded border border-zinc-700">
+              <span className="text-xs font-bold text-white bg-black/85 px-3 py-1 rounded border border-zinc-600 shadow">
                 Calidad IATF 16949
               </span>
             </div>
           </div>
 
-          <p className="text-sm text-zinc-300 leading-relaxed font-light">
+          <p className="text-base text-zinc-100 leading-relaxed font-normal">
             {product.description}
           </p>
 
           {/* Features */}
           <div className="space-y-2">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-white flex items-center gap-2">
+            <h4 className="text-sm font-bold uppercase tracking-wider text-white flex items-center gap-2">
               <Shield className="w-4 h-4 text-[#d4af37]" />
               <span>Características de Manufactura</span>
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {product.features.map((feat, i) => (
-                <div key={i} className="flex items-start gap-2 text-xs text-zinc-300 p-2 rounded bg-[#181b23] border border-zinc-800">
-                  <Check className="w-3.5 h-3.5 text-[#d4af37] flex-shrink-0 mt-0.5" />
+                <div key={i} className="flex items-start gap-2 text-sm text-zinc-200 p-2.5 rounded bg-[#181b23] border border-zinc-800 font-normal">
+                  <Check className="w-4 h-4 text-[#d4af37] flex-shrink-0 mt-0.5" />
                   <span>{feat}</span>
                 </div>
               ))}
@@ -91,13 +91,13 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
           {/* Materials & Tolerances */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 rounded bg-[#161922] border border-zinc-800">
             <div>
-              <span className="text-[10px] text-zinc-400 uppercase tracking-wider flex items-center gap-1.5 font-bold mb-1.5">
-                <Layers className="w-3.5 h-3.5 text-[#d4af37]" />
+              <span className="text-xs text-zinc-300 uppercase tracking-wider flex items-center gap-1.5 font-bold mb-2">
+                <Layers className="w-4 h-4 text-[#d4af37]" />
                 Materiales Compatibles
               </span>
               <div className="flex flex-wrap gap-1.5">
                 {product.materials.map((mat, i) => (
-                  <span key={i} className="px-2 py-0.5 rounded text-[11px] bg-zinc-800 text-zinc-200 border border-zinc-700">
+                  <span key={i} className="px-2.5 py-1 rounded text-xs font-semibold bg-zinc-800 text-zinc-100 border border-zinc-700">
                     {mat}
                   </span>
                 ))}
@@ -105,11 +105,11 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
             </div>
 
             <div>
-              <span className="text-[10px] text-zinc-400 uppercase tracking-wider flex items-center gap-1.5 font-bold mb-1.5">
-                <Gauge className="w-3.5 h-3.5 text-[#d4af37]" />
+              <span className="text-xs text-zinc-300 uppercase tracking-wider flex items-center gap-1.5 font-bold mb-2">
+                <Gauge className="w-4 h-4 text-[#d4af37]" />
                 Precisión Dimensional
               </span>
-              <p className="text-xs text-[#f5d47a] font-mono">
+              <p className="text-sm text-[#f5d47a] font-mono font-bold">
                 {product.tolerance}
               </p>
             </div>

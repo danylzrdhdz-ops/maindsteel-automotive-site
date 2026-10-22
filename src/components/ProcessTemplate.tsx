@@ -38,7 +38,7 @@ export const ProcessTemplate: React.FC<ProcessTemplateProps> = ({
           {/* Botón Volver */}
           <button 
             onClick={() => onNavigate('procesos')}
-            className="inline-flex items-center gap-2 text-xs uppercase tracking-wider text-zinc-300 border border-[#c59b27]/40 bg-black/60 px-4 py-1.5 rounded-full hover:border-[#c59b27] hover:text-[#c59b27] transition mb-4"
+            className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold uppercase tracking-wider text-zinc-100 border border-[#c59b27]/70 bg-black/80 px-4 py-2 rounded-full hover:border-[#f5d47a] hover:text-[#f5d47a] transition mb-4 cursor-pointer"
           >
             ← Volver a Catálogo de Procesos
           </button>
@@ -67,7 +67,7 @@ export const ProcessTemplate: React.FC<ProcessTemplateProps> = ({
                 className={`w-full h-full block ${process.machineryImageFit === 'contain' ? 'object-contain' : 'object-cover scale-[1.02]'}`}
               />
               <div className="absolute inset-0 pointer-events-none rounded-2xl ring-1 ring-inset ring-black/40"></div>
-              <div className="absolute top-4 left-4 z-20 bg-black/80 backdrop-blur border border-[#c59b27]/50 text-[#c59b27] text-[10px] font-bold px-2.5 py-1 rounded-md tracking-wider">
+              <div className="absolute top-4 left-4 z-20 bg-black/85 backdrop-blur border border-[#c59b27]/70 text-[#f5d47a] text-xs font-black px-3 py-1 rounded-md tracking-wider shadow-md">
                 PARQUE TECNOLÓGICO CNC
               </div>
             </div>
@@ -82,17 +82,17 @@ export const ProcessTemplate: React.FC<ProcessTemplateProps> = ({
               <div className="w-16 h-1 bg-[#d4af37] mt-2" />
             </div>
 
-            <p className="text-zinc-300 text-base leading-relaxed font-light">
+            <p className="text-zinc-200 text-base sm:text-lg leading-relaxed font-normal">
               {process.machineryText}
             </p>
 
             {/* Quick spec highlights */}
-            <div className="p-4 rounded-md bg-[#13151b] border border-zinc-800 space-y-2 text-xs">
-              <div className="flex items-center gap-2 text-[#d4af37] font-semibold uppercase tracking-wider">
+            <div className="p-4 rounded-md bg-[#13151b] border border-zinc-800 space-y-2 text-xs sm:text-sm">
+              <div className="flex items-center gap-2 text-[#d4af37] font-bold uppercase tracking-wider">
                 <Cpu className="w-4 h-4" />
                 <span>Capacidad y Fiabilidad IATF 16949</span>
               </div>
-              <p className="text-zinc-400 text-[11px] leading-relaxed">
+              <p className="text-zinc-300 text-xs sm:text-sm leading-relaxed font-normal">
                 Operamos bajo esquemas de manufactura esbelta con calibración continua y trazabilidad
                 completa por lote de producción.
               </p>
@@ -101,7 +101,7 @@ export const ProcessTemplate: React.FC<ProcessTemplateProps> = ({
             <div>
               <button
                 onClick={() => onOpenQuote(`${process.title} (Maquinaria)`)}
-                className="px-7 py-3 bg-[#b8860b] hover:bg-[#d4af37] text-white text-xs sm:text-sm font-extrabold uppercase tracking-wider rounded transition-all shadow-[0_4px_16px_rgba(184,134,11,0.4)] hover:shadow-[0_4px_22px_rgba(212,175,55,0.6)]"
+                className="px-7 py-3 bg-[#b8860b] hover:bg-[#d4af37] text-white text-xs sm:text-sm font-extrabold uppercase tracking-wider rounded transition-all shadow-[0_4px_16px_rgba(184,134,11,0.4)] hover:shadow-[0_4px_22px_rgba(212,175,55,0.6)] cursor-pointer"
                 id="quote-btn-maquinaria"
               >
                 Solicitar cotización
@@ -121,11 +121,11 @@ export const ProcessTemplate: React.FC<ProcessTemplateProps> = ({
               <div className="w-16 h-1 bg-[#d4af37] mt-2" />
             </div>
 
-            <p className="text-zinc-300 text-base leading-relaxed font-light">
+            <p className="text-zinc-200 text-base sm:text-lg leading-relaxed font-normal">
               {process.advantagesText}
             </p>
 
-            <ul className="space-y-2.5 text-xs text-zinc-300">
+            <ul className="space-y-3 text-sm text-zinc-200 font-normal">
               <li className="flex items-center gap-2.5">
                 <div className="w-4 h-4 rounded-full bg-[#d4af37]/20 flex items-center justify-center text-[#d4af37] flex-shrink-0">
                   <Check className="w-3 h-3" />
@@ -149,7 +149,7 @@ export const ProcessTemplate: React.FC<ProcessTemplateProps> = ({
             <div className="pt-2">
               <button
                 onClick={() => onOpenQuote(`${process.title} (Ventajas/Proceso)`)}
-                className="px-7 py-3 bg-[#b8860b] hover:bg-[#d4af37] text-white text-xs sm:text-sm font-extrabold uppercase tracking-wider rounded transition-all shadow-[0_4px_16px_rgba(184,134,11,0.4)] hover:shadow-[0_4px_22px_rgba(212,175,55,0.6)]"
+                className="px-7 py-3 bg-[#b8860b] hover:bg-[#d4af37] text-white text-xs sm:text-sm font-extrabold uppercase tracking-wider rounded transition-all shadow-[0_4px_16px_rgba(184,134,11,0.4)] hover:shadow-[0_4px_22px_rgba(212,175,55,0.6)] cursor-pointer"
                 id="quote-btn-ventajas"
               >
                 Solicitar cotización
@@ -166,7 +166,7 @@ export const ProcessTemplate: React.FC<ProcessTemplateProps> = ({
                 className="w-full h-full object-cover block scale-[1.02]"
               />
               <div className="absolute inset-0 pointer-events-none rounded-2xl ring-1 ring-inset ring-black/40"></div>
-              <div className="absolute top-4 right-4 z-20 bg-black/80 backdrop-blur border border-[#c59b27]/50 text-[#c59b27] text-[10px] font-bold px-2.5 py-1 rounded-md tracking-wider">
+              <div className="absolute top-4 right-4 z-20 bg-black/80 backdrop-blur border border-[#c59b27]/50 text-[#c59b27] text-xs font-bold px-2.5 py-1 rounded-md tracking-wider">
                 PIEZA TERMINADA
               </div>
             </div>
@@ -184,7 +184,7 @@ export const ProcessTemplate: React.FC<ProcessTemplateProps> = ({
               <h3 className="text-base font-extrabold uppercase tracking-wider text-white mb-3 mt-4">
                 Maquinaria
               </h3>
-              <p className="text-xs text-zinc-300 leading-relaxed font-light">
+              <p className="text-sm text-zinc-200 leading-relaxed font-normal">
                 {process.machineryCardSpecs}
               </p>
             </div>
@@ -197,7 +197,7 @@ export const ProcessTemplate: React.FC<ProcessTemplateProps> = ({
               <h3 className="text-base font-extrabold uppercase tracking-wider text-white mb-3 mt-4">
                 Garantía Maindsteel
               </h3>
-              <p className="text-xs text-zinc-300 leading-relaxed font-light">
+              <p className="text-sm text-zinc-200 leading-relaxed font-normal">
                 Ofrecemos garantía en todos nuestros servicios y productos realizados con excelencia
               </p>
             </div>
@@ -210,7 +210,7 @@ export const ProcessTemplate: React.FC<ProcessTemplateProps> = ({
               <h3 className="text-base font-extrabold uppercase tracking-wider text-white mb-3 mt-4">
                 100% Hidrocalidad
               </h3>
-              <p className="text-xs text-zinc-300 leading-relaxed font-light">
+              <p className="text-sm text-zinc-200 leading-relaxed font-normal">
                 Orgullosos de ser una empresa mexicana ícono del estado de Aguascalientes.
               </p>
             </div>
@@ -223,17 +223,17 @@ export const ProcessTemplate: React.FC<ProcessTemplateProps> = ({
           <section className="p-8 rounded-lg bg-[#111318] border border-zinc-800" id="section-tech-specs">
             <div className="flex items-center gap-3 mb-6">
               <Sparkles className="w-5 h-5 text-[#d4af37]" />
-              <h3 className="text-sm font-bold uppercase tracking-wider text-white">
+              <h3 className="text-base font-bold uppercase tracking-wider text-white">
                 Ficha Técnica de Capacidades de Proceso
               </h3>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {process.additionalSpecs.map((spec, i) => (
                 <div key={i} className="p-4 rounded bg-[#161922] border border-zinc-800/80">
-                  <span className="text-[10px] text-zinc-400 uppercase tracking-wider block mb-1">
+                  <span className="text-xs text-zinc-300 uppercase tracking-wider block mb-1 font-semibold">
                     {spec.label}
                   </span>
-                  <span className="text-sm font-bold text-[#f5d47a] block">
+                  <span className="text-base font-bold text-[#f5d47a] block">
                     {spec.value}
                   </span>
                 </div>

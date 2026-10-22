@@ -30,11 +30,11 @@ export const ProcessesCatalogView: React.FC<ProcessesCatalogViewProps> = ({
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.15),transparent_70%)]" />
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-wider drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white uppercase tracking-wider drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
             {t('processes_catalog.title')}
           </h1>
-          <div className="w-20 h-1 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent mx-auto mt-4" />
-          <p className="mt-3 text-xs sm:text-sm text-zinc-300 uppercase tracking-widest font-light">
+          <div className="w-24 h-1.5 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent mx-auto mt-4" />
+          <p className="mt-4 text-lg sm:text-2xl text-[#f5d47a] uppercase tracking-wider font-extrabold drop-shadow-md">
             {t('processes_catalog.subtitle')}
           </p>
         </div>
@@ -42,21 +42,21 @@ export const ProcessesCatalogView: React.FC<ProcessesCatalogViewProps> = ({
 
       {/* 2. PROCESSES LIST / CATALOG (Matching Image 9 structure) */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="space-y-8">
+        <div className="space-y-10">
           {processes.map((proc, index) => (
             <div
               key={proc.id}
-              className="bg-[#0f1115] rounded-md overflow-hidden border border-zinc-800/80 transition-all flex flex-col md:flex-row group"
+              className="bg-[#0f1115] rounded-xl overflow-hidden border-2 border-zinc-800 transition-all flex flex-col md:flex-row group hover:border-[#d4af37]/80 shadow-2xl"
               id={`catalog-process-${proc.slug}`}
             >
               {/* Left Photo */}
-              <div className="w-full md:w-[35%] h-64 md:h-auto overflow-hidden bg-zinc-950 relative border-r border-zinc-800/60">
+              <div className="w-full md:w-[35%] min-h-[260px] md:h-auto overflow-hidden bg-zinc-950 relative border-r border-zinc-800/80">
                 <Image
                   src={proc.cardImage || proc.machineryImage}
                   alt={proc.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-90"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-95"
                 />
-                <div className="absolute top-2 left-2 px-3 py-1 bg-black/80 border border-[#d4af37]/40 rounded-sm text-[10px] uppercase font-bold text-[#f5d47a] tracking-widest shadow-md">
+                <div className="absolute top-4 left-4 px-3.5 py-1.5 bg-black/90 border border-[#d4af37] rounded-md text-xs sm:text-sm uppercase font-black text-[#f5d47a] tracking-widest shadow-lg">
                   {t('processes_catalog.process_prefix')}{index + 1 < 10 ? `0${index + 1}` : index + 1}
                 </div>
               </div>
@@ -65,31 +65,31 @@ export const ProcessesCatalogView: React.FC<ProcessesCatalogViewProps> = ({
               <div className="w-full md:w-[65%] p-6 lg:p-8 flex flex-col justify-between space-y-6">
                 
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between gap-4 border-b border-zinc-800/60 pb-3">
-                    <h2 className="text-2xl sm:text-3xl font-black text-white uppercase tracking-wide drop-shadow-sm">
+                  <div className="flex items-center justify-between gap-4 border-b border-zinc-800 pb-3">
+                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white uppercase tracking-wide drop-shadow-sm">
                       {proc.title}
                     </h2>
-                    <span className="hidden sm:inline-flex items-center gap-1.5 text-[10px] tracking-widest text-[#d4af37] font-bold uppercase">
-                      <Sparkles className="w-3.5 h-3.5" />
+                    <span className="hidden sm:inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold tracking-widest text-[#d4af37] uppercase">
+                      <Sparkles className="w-4 h-4" />
                       <span>IATF 16949</span>
                     </span>
                   </div>
 
-                  <p className="text-sm text-zinc-300 leading-relaxed font-light">
+                  <p className="text-lg sm:text-xl text-zinc-100 leading-relaxed font-normal">
                     {proc.machineryText}
                   </p>
 
-                  <div className="flex items-start gap-2.5 text-[13px] text-zinc-400 font-light">
-                    <CheckCircle className="w-4 h-4 text-[#d4af37] flex-shrink-0 mt-0.5" />
+                  <div className="flex items-start gap-3.5 text-base sm:text-lg text-white font-medium bg-black/60 p-4 rounded-lg border border-[#d4af37]/40 shadow-inner">
+                    <CheckCircle className="w-6 h-6 text-[#d4af37] flex-shrink-0 mt-0.5" />
                     <span>{proc.machineryCardSpecs}</span>
                   </div>
                 </div>
 
                 {/* Actions Block: Horizontal Buttons */}
-                <div className="pt-2 flex items-center gap-3">
+                <div className="pt-2 flex flex-wrap items-center gap-4">
                   <button
                     onClick={() => onOpenQuote(proc.title)}
-                    className="px-6 py-2.5 bg-[#b8860b] hover:bg-[#d4af37] text-white text-xs font-bold uppercase tracking-wider rounded-sm transition-all shadow-md"
+                    className="px-8 py-3.5 bg-[#b8860b] hover:bg-[#d4af37] text-white text-sm sm:text-base font-black uppercase tracking-wider rounded-lg transition-all shadow-[0_4px_16px_rgba(184,134,11,0.4)] hover:shadow-[0_4px_22px_rgba(212,175,55,0.6)] cursor-pointer"
                     id={`btn-cotizar-proc-${proc.slug}`}
                   >
                     {t('processes_catalog.btn_quote')}
@@ -97,11 +97,11 @@ export const ProcessesCatalogView: React.FC<ProcessesCatalogViewProps> = ({
 
                   <button
                     onClick={() => onNavigate(`proceso/${proc.slug}` as RoutePath)}
-                    className="px-6 py-2.5 bg-black hover:bg-zinc-900 border border-[#d4af37]/70 hover:border-[#d4af37] text-[#f5d47a] hover:text-[#d4af37] text-xs font-bold uppercase tracking-wider rounded-sm transition-all flex items-center gap-2 shadow-sm"
+                    className="px-8 py-3.5 bg-black hover:bg-zinc-900 border-2 border-[#d4af37] hover:border-[#f5d47a] text-[#f5d47a] hover:text-[#d4af37] text-sm sm:text-base font-black uppercase tracking-wider rounded-lg transition-all flex items-center gap-2.5 shadow-sm cursor-pointer"
                     id={`btn-ver-proc-${proc.slug}`}
                   >
                     <span>{t('processes_catalog.btn_view')}</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>
 

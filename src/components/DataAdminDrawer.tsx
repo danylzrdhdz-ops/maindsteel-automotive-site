@@ -143,38 +143,38 @@ export const DataAdminDrawer: React.FC = () => {
                         {q.servicioProducto}
                       </h4>
 
-                      <div className="grid grid-cols-2 gap-2 text-xs text-zinc-300">
+                      <div className="grid grid-cols-2 gap-2 text-xs text-zinc-200">
                         <div>
-                          <span className="text-zinc-500 block text-[10px]">Solicitante:</span>
-                          <span>{q.nombre}</span>
+                          <span className="text-zinc-400 block text-xs font-medium">Solicitante:</span>
+                          <span className="text-white font-medium">{q.nombre}</span>
                         </div>
                         <div>
-                          <span className="text-zinc-500 block text-[10px]">Empresa:</span>
-                          <span>{q.empresa}</span>
+                          <span className="text-zinc-400 block text-xs font-medium">Empresa:</span>
+                          <span className="text-white font-medium">{q.empresa}</span>
                         </div>
                         <div>
-                          <span className="text-zinc-500 block text-[10px]">Email:</span>
-                          <span className="text-[#d4af37]">{q.email}</span>
+                          <span className="text-zinc-400 block text-xs font-medium">Email:</span>
+                          <span className="text-[#f5d47a] font-medium">{q.email}</span>
                         </div>
                         <div>
-                          <span className="text-zinc-500 block text-[10px]">Teléfono:</span>
-                          <span>{q.telefono}</span>
+                          <span className="text-zinc-400 block text-xs font-medium">Teléfono:</span>
+                          <span className="text-zinc-200">{q.telefono}</span>
                         </div>
                       </div>
 
-                      <div className="pt-1 text-xs text-zinc-400 bg-zinc-900/60 p-2.5 rounded border border-zinc-800/80">
-                        <span className="text-[10px] text-zinc-500 uppercase block font-mono">Volumen: {q.volumen}</span>
-                        <p className="mt-1 text-[11px] leading-relaxed text-zinc-300 font-light">{q.mensaje}</p>
+                      <div className="pt-1 text-xs text-zinc-300 bg-zinc-900/60 p-2.5 rounded border border-zinc-800/80">
+                        <span className="text-xs text-[#d4af37] uppercase block font-mono font-bold">Volumen: {q.volumen}</span>
+                        <p className="mt-1 text-xs sm:text-sm leading-relaxed text-zinc-200 font-normal">{q.mensaje}</p>
                       </div>
 
-                      <span className="text-[10px] text-zinc-500 block text-right">
+                      <span className="text-xs text-zinc-400 block text-right font-medium">
                         {new Date(q.createdAt).toLocaleString('es-MX')}
                       </span>
                     </div>
                   ))
                 )
               ) : contacts.length === 0 ? (
-                <div className="p-8 text-center text-zinc-500 text-xs">
+                <div className="p-8 text-center text-zinc-400 text-sm">
                   No hay mensajes registrados en la colección contact_messages.
                 </div>
               ) : (
@@ -189,10 +189,10 @@ export const DataAdminDrawer: React.FC = () => {
                       </span>
                       <button
                         onClick={() => handleDeleteContact(c.id)}
-                        className="text-zinc-500 hover:text-red-400 p-1"
+                        className="text-zinc-400 hover:text-red-400 p-1 cursor-pointer"
                         title="Eliminar mensaje"
                       >
-                        <Trash2 className="w-3.5 h-3.5" />
+                        <Trash2 className="w-4 h-4" />
                       </button>
                     </div>
 
@@ -200,28 +200,28 @@ export const DataAdminDrawer: React.FC = () => {
                       {c.asunto || 'Consulta General'}
                     </h4>
 
-                    <div className="grid grid-cols-2 gap-2 text-xs text-zinc-300">
+                    <div className="grid grid-cols-2 gap-2 text-xs text-zinc-200">
                       <div>
-                        <span className="text-zinc-500 block text-[10px]">Nombre:</span>
-                        <span>{c.nombre}</span>
+                        <span className="text-zinc-400 block text-xs font-medium">Nombre:</span>
+                        <span className="text-white font-medium">{c.nombre}</span>
                       </div>
                       <div>
-                        <span className="text-zinc-500 block text-[10px]">Email:</span>
-                        <span className="text-[#d4af37]">{c.email}</span>
+                        <span className="text-zinc-400 block text-xs font-medium">Email:</span>
+                        <span className="text-[#f5d47a] font-medium">{c.email}</span>
                       </div>
                       {c.telefono && (
                         <div>
-                          <span className="text-zinc-500 block text-[10px]">Teléfono:</span>
-                          <span>{c.telefono}</span>
+                          <span className="text-zinc-400 block text-xs font-medium">Teléfono:</span>
+                          <span className="text-zinc-200">{c.telefono}</span>
                         </div>
                       )}
                     </div>
 
-                    <p className="text-xs text-zinc-300 bg-zinc-900/60 p-2.5 rounded border border-zinc-800/80 leading-relaxed font-light">
+                    <p className="text-xs sm:text-sm text-zinc-200 bg-zinc-900/60 p-2.5 rounded border border-zinc-800/80 leading-relaxed font-normal">
                       {c.mensaje}
                     </p>
 
-                    <span className="text-[10px] text-zinc-500 block text-right">
+                    <span className="text-xs text-zinc-400 block text-right font-medium">
                       {new Date(c.createdAt).toLocaleString('es-MX')}
                     </span>
                   </div>

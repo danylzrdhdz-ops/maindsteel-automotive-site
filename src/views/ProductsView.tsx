@@ -53,11 +53,11 @@ export const ProductsView: React.FC<ProductsViewProps> = ({ onOpenQuote }) => {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.15),transparent_70%)]" />
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-wider drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-wider drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
             {t('product_catalog.title_part1')}<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d4af37] via-[#f5d47a] to-[#d4af37]">{t('product_catalog.title_highlight')}</span>
           </h1>
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent mx-auto mt-4" />
-          <p className="mt-3 text-xs sm:text-sm text-zinc-300 uppercase tracking-widest font-light">
+          <p className="mt-3 text-sm sm:text-base text-zinc-100 uppercase tracking-widest font-semibold drop-shadow-md">
             {t('product_catalog.subtitle')}
           </p>
         </div>
@@ -72,10 +72,10 @@ export const ProductsView: React.FC<ProductsViewProps> = ({ onOpenQuote }) => {
               <button
                 key={f.key}
                 onClick={() => setActiveFilter(f.key)}
-                className={`px-4 py-2 text-[11px] sm:text-xs font-bold uppercase tracking-widest transition-all border ${
+                className={`px-4 py-2.5 text-xs sm:text-sm font-bold uppercase tracking-widest transition-all border cursor-pointer ${
                   isActive
-                    ? 'bg-transparent text-[#f5d47a] border-b-2 border-b-[#f5d47a] border-t-transparent border-x-transparent shadow-sm'
-                    : 'bg-transparent text-zinc-400 border border-zinc-700/50 hover:text-[#f5d47a] hover:border-[#d4af37]/60'
+                    ? 'bg-[#d4af37]/20 text-[#f5d47a] border border-[#d4af37] shadow-sm'
+                    : 'bg-transparent text-zinc-300 border border-zinc-700 hover:text-white hover:border-[#d4af37]/70'
                 }`}
                 id={`filter-${f.key}`}
               >
@@ -92,7 +92,7 @@ export const ProductsView: React.FC<ProductsViewProps> = ({ onOpenQuote }) => {
           {filteredProducts.map((product) => (
             <div
               key={product.id}
-              className="bg-[#12141a] rounded-xl overflow-hidden border border-zinc-700/80 hover:border-[#d4af37] transition-all flex flex-col justify-between shadow-xl group hover:shadow-[0_8px_28px_rgba(212,175,55,0.15)]"
+              className="bg-[#12141a] rounded-xl overflow-hidden border border-zinc-700/80 hover:border-[#d4af37] transition-all flex flex-col justify-between shadow-xl group hover:shadow-[0_8px_28px_rgba(212,175,55,0.2)]"
               id={`product-card-${product.id}`}
             >
               {/* Product Photo Full-Bleed Container */}
@@ -105,7 +105,7 @@ export const ProductsView: React.FC<ProductsViewProps> = ({ onOpenQuote }) => {
                 <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-[#121212] via-transparent to-transparent opacity-90 pointer-events-none" />
 
                 {/* Quality badge pill */}
-                <div className="absolute top-4 right-4 z-10 px-2.5 py-0.5 rounded bg-black/80 border border-[#d4af37]/50 text-[10px] uppercase font-bold text-[#f5d47a] shadow-md">
+                <div className="absolute top-4 right-4 z-10 px-2.5 py-1 rounded bg-black/85 border border-[#d4af37]/70 text-xs uppercase font-bold text-[#f5d47a] shadow-md">
                   IATF 16949
                 </div>
               </div>
@@ -113,7 +113,7 @@ export const ProductsView: React.FC<ProductsViewProps> = ({ onOpenQuote }) => {
               {/* Title & Actions */}
               <div className="p-5 sm:p-6 border-t border-zinc-800/90 flex-1 flex flex-col justify-end space-y-4 bg-[#121212]">
                 <div className="text-center mb-2">
-                  <h3 className="text-sm sm:text-base font-black uppercase text-white tracking-widest group-hover:text-[#f5d47a] transition-colors line-clamp-2 leading-tight">
+                  <h3 className="text-base sm:text-lg font-black uppercase text-white tracking-widest group-hover:text-[#f5d47a] transition-colors line-clamp-2 leading-snug">
                     {product.title}
                   </h3>
                 </div>
@@ -122,7 +122,7 @@ export const ProductsView: React.FC<ProductsViewProps> = ({ onOpenQuote }) => {
                 <div className="flex flex-col gap-3">
                   <button
                     onClick={() => onOpenQuote(`Producto: ${product.title}`)}
-                    className="w-full py-3 bg-[#b8860b] hover:bg-[#d4af37] text-black text-xs font-black uppercase tracking-widest transition-all shadow-md"
+                    className="w-full py-3 bg-[#b8860b] hover:bg-[#d4af37] text-black text-xs sm:text-sm font-black uppercase tracking-widest transition-all shadow-md cursor-pointer"
                     id={`btn-cotizar-${product.id}`}
                   >
                     {t('product_catalog.btn_quote')}
@@ -130,7 +130,7 @@ export const ProductsView: React.FC<ProductsViewProps> = ({ onOpenQuote }) => {
 
                   <button
                     onClick={() => setSelectedProduct(product)}
-                    className="w-full py-3 bg-black hover:bg-zinc-900 border border-[#d4af37]/80 hover:border-[#d4af37] text-white hover:text-[#f5d47a] text-xs font-bold uppercase tracking-widest transition-all"
+                    className="w-full py-3 bg-black hover:bg-zinc-900 border border-[#d4af37] hover:border-[#f5d47a] text-white hover:text-[#f5d47a] text-xs sm:text-sm font-bold uppercase tracking-widest transition-all cursor-pointer"
                     id={`btn-detalles-${product.id}`}
                   >
                     {t('product_catalog.btn_details')}

@@ -23,14 +23,14 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           
           {/* Column 1: MENU */}
           <div className="space-y-4" id="footer-menu-col">
-            <h4 className="text-sm font-bold uppercase tracking-wider text-white border-b border-[#d4af37] pb-2 inline-block">
+            <h4 className="text-base font-extrabold uppercase tracking-wider text-white border-b-2 border-[#d4af37] pb-2 inline-block">
               {t('footer.title_menu')}
             </h4>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="space-y-2.5 text-sm sm:text-base">
               <li>
                 <button
                   onClick={() => onNavigate('inicio')}
-                  className="text-zinc-400 hover:text-[#f5d47a] transition-colors"
+                  className="text-zinc-300 hover:text-[#f5d47a] font-medium transition-colors cursor-pointer"
                 >
                   {t('header.nav.home')}
                 </button>
@@ -38,7 +38,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               <li>
                 <button
                   onClick={() => onNavigate('procesos')}
-                  className="text-zinc-400 hover:text-[#f5d47a] transition-colors"
+                  className="text-zinc-300 hover:text-[#f5d47a] font-medium transition-colors cursor-pointer"
                 >
                   {t('header.nav.processes')}
                 </button>
@@ -46,7 +46,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               <li>
                 <button
                   onClick={() => onNavigate('productos')}
-                  className="text-zinc-400 hover:text-[#f5d47a] transition-colors"
+                  className="text-zinc-300 hover:text-[#f5d47a] font-medium transition-colors cursor-pointer"
                 >
                   {t('header.nav.products')}
                 </button>
@@ -54,7 +54,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               <li>
                 <button
                   onClick={() => onNavigate('contacto')}
-                  className="text-zinc-400 hover:text-[#f5d47a] transition-colors"
+                  className="text-zinc-300 hover:text-[#f5d47a] font-medium transition-colors cursor-pointer"
                 >
                   {t('header.nav.contact')}
                 </button>
@@ -64,24 +64,24 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
           {/* Column 2: CONTACTO */}
           <div className="space-y-4" id="footer-contact-col">
-            <h4 className="text-sm font-bold uppercase tracking-wider text-white border-b border-[#d4af37] pb-2 inline-block">
+            <h4 className="text-base font-extrabold uppercase tracking-wider text-white border-b-2 border-[#d4af37] pb-2 inline-block">
               {t('footer.title_contact')}
             </h4>
-            <div className="flex items-start gap-3 text-xs leading-relaxed text-zinc-400">
+            <div className="flex items-start gap-3 text-sm leading-relaxed text-zinc-300">
               <MapPin className="w-5 h-5 text-[#d4af37] flex-shrink-0 mt-0.5" />
               <p>
                 PIVA Parque Industrial del Valle de Aguascalientes, Calle Municipio de Calvillo # 103,
                 Col. Valle de Aguascalientes, San Francisco de los Romo, Aguascalientes, México.
               </p>
             </div>
-            <div className="flex items-center gap-3 text-xs text-zinc-300 pt-1">
-              <span className="text-[#d4af37] font-semibold">Tel:</span>
+            <div className="flex items-center gap-3 text-sm text-zinc-200 pt-1 font-medium">
+              <span className="text-[#f5d47a] font-bold">Tel:</span>
               <a href="tel:+524491581709" className="hover:text-[#f5d47a] hover:underline">
                 +52-449-158-17-09
               </a>
             </div>
-            <div className="flex items-center gap-3 text-xs text-zinc-300">
-              <span className="text-[#d4af37] font-semibold">Email:</span>
+            <div className="flex items-center gap-3 text-sm text-zinc-200 font-medium">
+              <span className="text-[#f5d47a] font-bold">Email:</span>
               <a href="mailto:contacto@maindsteel.com.mx" className="hover:text-[#f5d47a] hover:underline">
                 contacto@maindsteel.com.mx
               </a>
@@ -90,10 +90,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
           {/* Column 3: REDES SOCIALES */}
           <div className="space-y-4" id="footer-social-col">
-            <h4 className="text-sm font-bold uppercase tracking-wider text-white border-b border-[#d4af37] pb-2 inline-block">
+            <h4 className="text-base font-extrabold uppercase tracking-wider text-white border-b-2 border-[#d4af37] pb-2 inline-block">
               {t('footer.title_social')}
             </h4>
-            <p className="text-xs text-zinc-400">
+            <p className="text-sm text-zinc-300">
               {t('footer.social_desc')}
             </p>
             <div className="flex items-center justify-start gap-4 sm:gap-6 pt-4">
@@ -150,7 +150,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
           {/* Column 4: CERTIFICACIONES Y ALIANZAS */}
           <div className="space-y-4" id="footer-certifications-col">
-            <h4 className="text-sm font-bold uppercase tracking-wider text-white border-b border-[#d4af37] pb-2 inline-block">
+            <h4 className="text-base font-extrabold uppercase tracking-wider text-white border-b-2 border-[#d4af37] pb-2 inline-block">
               {t('footer.title_cert')}
             </h4>
             <div className="pt-2 flex justify-start">
@@ -165,16 +165,16 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 gap-4">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs sm:text-sm text-zinc-300 font-medium gap-4">
           <p>© {new Date().getFullYear()} Maindsteel Automotive. {t('footer.rights')}</p>
           <div className="flex items-center gap-6">
-            <button onClick={() => onNavigate('contacto')} className="hover:text-[#f5d47a]">
+            <button onClick={() => onNavigate('contacto')} className="hover:text-[#f5d47a] text-zinc-300 cursor-pointer">
               {t('footer.privacy')}
             </button>
-            <button onClick={() => onNavigate('procesos')} className="hover:text-[#f5d47a]">
+            <button onClick={() => onNavigate('procesos')} className="hover:text-[#f5d47a] text-zinc-300 cursor-pointer">
               {t('footer.cnc')}
             </button>
-            <button onClick={() => onNavigate('contacto')} className="hover:text-[#f5d47a]">
+            <button onClick={() => onNavigate('contacto')} className="hover:text-[#f5d47a] text-zinc-300 cursor-pointer">
               {t('footer.location')}
             </button>
           </div>

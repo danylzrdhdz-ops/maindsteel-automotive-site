@@ -50,8 +50,8 @@ export const HomeSecondaryContent: React.FC<HomeSecondaryContentProps> = ({ onNa
             {/* Right: Data Blocks matching Canva */}
             <div className="space-y-6">
               {/* Box 1: Nave Industrial */}
-              <div className="p-8 border border-[#d4af37]/60 bg-[#0b0c10]/70 backdrop-blur-md shadow-xl flex items-center h-40">
-                <p className="text-[17px] text-zinc-200 leading-relaxed font-light">
+              <div className="p-8 border border-[#d4af37]/60 bg-[#0b0c10]/85 backdrop-blur-md shadow-xl flex items-center h-40">
+                <p className="text-[17px] text-zinc-100 leading-relaxed font-normal">
                   {t('home.tech_area_desc1')} <br/> {t('home.tech_area_desc2')} <span className="font-bold text-white">{t('home.tech_area_bold')}</span>{t('home.tech_area_desc3')}
                 </p>
               </div>
@@ -60,7 +60,7 @@ export const HomeSecondaryContent: React.FC<HomeSecondaryContentProps> = ({ onNa
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 h-40">
                 <div className="p-4 border border-[#d4af37]/60 bg-[#0b0c10]/90 backdrop-blur-md flex items-center justify-center shadow-2xl h-full">
                    <div className="text-left w-full h-full p-2 flex flex-col justify-center">
-                     <span className="text-white text-[15px] font-black leading-relaxed tracking-wider mb-3 drop-shadow-md uppercase">
+                     <span className="text-white text-base font-black leading-relaxed tracking-wider mb-3 drop-shadow-md uppercase">
                        {t('home.tech_tier2')}
                      </span>
                      <div className="w-12 h-[3px] bg-[#d4af37]" />
@@ -97,7 +97,7 @@ export const HomeSecondaryContent: React.FC<HomeSecondaryContentProps> = ({ onNa
                 {t('home.proc_title_highlight')}
               </span>
             </h2>
-            <p className="mt-4 text-xs sm:text-sm text-zinc-300 leading-relaxed font-light max-w-3xl mx-auto">
+            <p className="mt-4 text-sm sm:text-base text-zinc-100 leading-relaxed font-normal max-w-3xl mx-auto">
               {t('home.proc_desc')}
             </p>
             <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent mx-auto mt-5" />
@@ -107,7 +107,7 @@ export const HomeSecondaryContent: React.FC<HomeSecondaryContentProps> = ({ onNa
             {processes.map((proc, index) => (
               <div
                 key={proc.id}
-                className="relative border border-[#d4af37]/20 rounded-lg overflow-hidden bg-[#0d1015] flex flex-col group shadow-[0_4px_25px_rgba(0,0,0,0.5)] transition-all hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(212,175,55,0.15)]"
+                className="relative border border-[#d4af37]/30 rounded-lg overflow-hidden bg-[#0d1015] flex flex-col group shadow-[0_4px_25px_rgba(0,0,0,0.5)] transition-all hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(212,175,55,0.25)] hover:border-[#d4af37]/60"
                 id={`process-card-${proc.slug}`}
               >
                 <div className="relative h-44 sm:h-48 w-full overflow-hidden">
@@ -118,21 +118,21 @@ export const HomeSecondaryContent: React.FC<HomeSecondaryContentProps> = ({ onNa
                     width={400}
                     height={300}
                   />
-                  <div className="absolute top-4 left-4 bg-[#11131a] border border-[#d4af37]/60 px-2 py-0.5 shadow-md">
-                    <span className="text-[#d4af37] font-black text-xs tracking-widest font-sans">
+                  <div className="absolute top-4 left-4 bg-[#11131a] border border-[#d4af37]/80 px-2.5 py-0.5 shadow-md">
+                    <span className="text-[#f5d47a] font-black text-xs tracking-widest font-sans">
                       {String(index + 1).padStart(2, '0')}
                     </span>
                   </div>
                 </div>
 
                 <div className="flex-1 p-6 flex flex-col">
-                  <h3 className="text-[15px] font-black uppercase text-white tracking-widest leading-snug mb-8 group-hover:text-[#f5d47a] transition-colors duration-300">
+                  <h3 className="text-base font-black uppercase text-white tracking-widest leading-snug mb-8 group-hover:text-[#f5d47a] transition-colors duration-300">
                     {proc.title}
                   </h3>
                   <div className="mt-auto">
                     <button
                       onClick={() => onNavigate(`proceso/${proc.slug}` as RoutePath)}
-                      className="w-full flex items-center justify-center gap-2 py-3 bg-transparent text-white hover:text-black border border-[#d4af37]/40 hover:bg-[#d4af37] hover:border-[#d4af37] text-[11px] font-bold uppercase tracking-widest transition-all duration-300"
+                      className="w-full flex items-center justify-center gap-2 py-3 bg-transparent text-white hover:text-black border border-[#d4af37]/60 hover:bg-[#d4af37] hover:border-[#d4af37] text-xs font-bold uppercase tracking-widest transition-all duration-300 cursor-pointer"
                       id={`btn-ver-detalles-${proc.slug}`}
                     >
                       {t('home.btn_details')}
@@ -158,7 +158,7 @@ export const HomeSecondaryContent: React.FC<HomeSecondaryContentProps> = ({ onNa
                 {t('home.cli_title_highlight')}
               </span>
             </h2>
-            <p className="text-xs text-zinc-400 mt-2 uppercase tracking-wider font-light">
+            <p className="text-sm sm:text-base text-zinc-200 mt-2 uppercase tracking-wider font-medium">
               {t('home.cli_desc')}
             </p>
             <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent mx-auto mt-3" />

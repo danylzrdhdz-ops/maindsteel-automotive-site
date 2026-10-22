@@ -116,19 +116,19 @@ export const AuthModal: React.FC<AuthModalProps> = ({
               </div>
               <div>
                 <h4 className="text-base font-bold text-white">{currentUser.displayName}</h4>
-                <p className="text-xs text-zinc-400">{currentUser.email}</p>
-                <div className="inline-block mt-1 px-2 py-0.5 rounded text-[10px] font-semibold uppercase bg-[#d4af37]/20 text-[#f5d47a] border border-[#d4af37]/40">
+                <p className="text-xs text-zinc-300 font-medium">{currentUser.email}</p>
+                <div className="inline-block mt-1 px-2.5 py-0.5 rounded text-xs font-bold uppercase bg-[#d4af37]/20 text-[#f5d47a] border border-[#d4af37]/50">
                   Rol: {currentUser.role}
                 </div>
               </div>
             </div>
 
             <div className="p-3.5 rounded bg-zinc-900/60 border border-zinc-800 text-xs text-zinc-300 space-y-1.5">
-              <div className="flex items-center gap-2 text-emerald-400 font-semibold">
+              <div className="flex items-center gap-2 text-emerald-400 font-bold">
                 <ShieldCheck className="w-4 h-4" />
                 <span>Autenticación Activa</span>
               </div>
-              <p className="text-[11px] text-zinc-400">
+              <p className="text-xs text-zinc-300 leading-relaxed font-normal">
                 Almacenamiento local seguro activo. Tus cotizaciones y mensajes quedan vinculados a tu sesión.
               </p>
             </div>
@@ -234,21 +234,21 @@ export const AuthModal: React.FC<AuthModalProps> = ({
 
                 {/* Quick Auto-Fill Buttons for testing */}
                 <div className="p-3 bg-zinc-900/80 rounded border border-zinc-800">
-                  <span className="text-[10px] uppercase tracking-wider text-zinc-400 font-semibold block mb-1.5">
+                  <span className="text-xs uppercase tracking-wider text-zinc-300 font-bold block mb-1.5">
                     Acceso rápido de demostración:
                   </span>
                   <div className="flex gap-2">
                     <button
                       type="button"
                       onClick={() => handleQuickDemo('admin.ingenieria@maindsteel.mx', 'Ing. Gabriel Ramos')}
-                      className="px-2.5 py-1 bg-zinc-800 hover:bg-zinc-700 rounded text-[11px] text-zinc-200"
+                      className="px-3 py-1.5 bg-zinc-800 hover:bg-zinc-700 rounded text-xs text-zinc-100 font-medium cursor-pointer"
                     >
                       Ingeniería
                     </button>
                     <button
                       type="button"
                       onClick={() => handleQuickDemo('compras@automotive.mx', 'Lic. Sofía Alarcón')}
-                      className="px-2.5 py-1 bg-zinc-800 hover:bg-zinc-700 rounded text-[11px] text-zinc-200"
+                      className="px-3 py-1.5 bg-zinc-800 hover:bg-zinc-700 rounded text-xs text-zinc-100 font-medium cursor-pointer"
                     >
                       Cliente Tier 1
                     </button>

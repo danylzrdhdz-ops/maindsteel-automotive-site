@@ -58,21 +58,21 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onOpenQuote }) =
             alt="Manufactura a la Altura"
             loading="eager"
             fetchPriority="high" 
-            className="w-full h-full object-cover filter brightness-[0.6] contrast-105"
+            className="w-full h-full object-cover filter brightness-[0.55] contrast-110"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/45 to-black/80" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.15),transparent_70%)]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/90" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.18),transparent_70%)]" />
         </div>
 
         {/* Hero Content */}
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
           {/* Gold Certified Pill */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#13151b]/90 border border-[#d4af37]/60 mb-6 text-xs uppercase tracking-widest text-[#f5d47a] shadow-xl">
-            <Award className="w-3.5 h-3.5 text-[#d4af37]" />
-            <span className="font-semibold">{t('home.hero_pill')}</span>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#13151b]/95 border border-[#d4af37]/80 mb-6 text-xs sm:text-sm uppercase tracking-widest text-[#f5d47a] shadow-xl font-bold">
+            <Award className="w-4 h-4 text-[#d4af37]" />
+            <span className="font-bold">{t('home.hero_pill')}</span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white uppercase tracking-tight leading-tight sm:leading-none drop-shadow-[0_6px_30px_rgba(0,0,0,0.9)]">
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white uppercase tracking-tight leading-tight sm:leading-none drop-shadow-[0_6px_30px_rgba(0,0,0,0.95)]">
             {t('home.hero_title_part1')}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d4af37] via-[#f5d47a] to-[#d4af37]">
               {t('home.hero_title_highlight')}
@@ -80,7 +80,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onOpenQuote }) =
             {t('home.hero_title_part2')}
           </h1>
 
-          <p className="mt-6 text-base sm:text-xl text-zinc-300 max-w-3xl mx-auto font-light leading-relaxed">
+          <p className="mt-6 text-xl sm:text-2xl lg:text-[28px] text-white max-w-4xl mx-auto font-semibold leading-snug drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
             {t('home.hero_desc')}
           </p>
 
@@ -88,14 +88,14 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onOpenQuote }) =
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <button
                 onClick={() => onNavigate('productos')}
-                className="w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-[#b8860b] via-[#d4af37] to-[#b8860b] hover:from-[#d4af37] hover:to-[#f5d47a] text-black font-black text-sm uppercase tracking-wider transition-all shadow-[0_4px_22px_rgba(212,175,55,0.4)] hover:shadow-[0_4px_30px_rgba(212,175,55,0.6)]"
+                className="w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-[#b8860b] via-[#d4af37] to-[#b8860b] hover:from-[#d4af37] hover:to-[#f5d47a] text-black font-black text-sm uppercase tracking-wider transition-all shadow-[0_4px_22px_rgba(212,175,55,0.4)] hover:shadow-[0_4px_30px_rgba(212,175,55,0.6)] cursor-pointer"
                 id="hero-btn-productos"
               >
                 {t('home.btn_products')}
               </button>
               <button
                 onClick={() => onOpenQuote('Asesoría Técnica General')}
-                className="w-full sm:w-auto px-8 py-3.5 bg-black hover:bg-black text-white font-bold text-sm uppercase tracking-wider border border-[#d4af37]/80 hover:border-[#d4af37] transition-all shadow-lg"
+                className="w-full sm:w-auto px-8 py-3.5 bg-black hover:bg-zinc-900 text-white font-bold text-sm uppercase tracking-wider border-2 border-[#d4af37] hover:border-[#f5d47a] transition-all shadow-lg cursor-pointer"
                 id="hero-btn-asesor"
               >
                 {t('home.btn_consultant')}
@@ -114,7 +114,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onOpenQuote }) =
               <div className="mb-4 opacity-90 grayscale-[85%] filter brightness-110 mt-[-10px] transform hover:scale-105 transition-transform duration-500">
                 <Image src={medallaPlateada} alt="Medalla Plateada" className="w-40 h-40 sm:w-56 sm:h-56 object-contain drop-shadow-xl" />
               </div>
-              <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-light text-justify sm:text-center mt-[-20px]">
+              <p className="text-lg sm:text-xl lg:text-[22px] text-white leading-relaxed font-medium text-left sm:text-center mt-[-10px] max-w-5xl px-2">
                 {t('home.intro_desc')}
               </p>
             </div>
@@ -123,40 +123,40 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onOpenQuote }) =
           <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
             
             {/* Card 1: POLÍTICA DE CALIDAD */}
-            <div className="flex flex-col items-center text-center group rounded-xl border border-zinc-800 p-8 sm:p-10 shadow-2xl hover:border-[#d4af37]/40 transition-colors bg-[#0c0d11]">
+            <div className="flex flex-col items-center text-center group rounded-xl border border-zinc-800 p-8 sm:p-10 shadow-2xl hover:border-[#d4af37]/60 transition-colors bg-[#0c0d11]">
               <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300 w-36 h-36 flex items-center justify-center">
                 <Image src={politicaImg} alt="Política de Calidad" className="w-full h-full object-contain drop-shadow-xl scale-[2.0]" />
               </div>
-              <h3 className="text-[13px] font-black uppercase tracking-widest text-white mb-4 mt-2">
+              <h3 className="text-lg font-black uppercase tracking-widest text-white mb-3 mt-2">
                 {t('home.card1_title')}
               </h3>
-              <p className="text-[13px] text-zinc-300 leading-relaxed font-light">
+              <p className="text-base sm:text-lg text-zinc-50 leading-relaxed font-medium">
                 {t('home.card1_desc')}
               </p>
             </div>
 
             {/* Card 2: GARANTÍA MAINDSTEEL */}
-            <div className="flex flex-col items-center text-center group rounded-xl border border-zinc-800 p-8 sm:p-10 shadow-2xl hover:border-[#d4af37]/40 transition-colors bg-[#0c0d11]">
+            <div className="flex flex-col items-center text-center group rounded-xl border border-zinc-800 p-8 sm:p-10 shadow-2xl hover:border-[#d4af37]/60 transition-colors bg-[#0c0d11]">
               <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300 w-36 h-36 flex items-center justify-center">
                 <Image src={garantiaImg} alt="Garantía Maindsteel" className="w-full h-full object-contain drop-shadow-xl scale-[1.3]" />
               </div>
-              <h3 className="text-[13px] font-black uppercase tracking-widest text-white mb-4 mt-2">
+              <h3 className="text-lg font-black uppercase tracking-widest text-white mb-3 mt-2">
                 {t('home.card2_title')}
               </h3>
-              <p className="text-[13px] text-zinc-300 leading-relaxed font-light">
+              <p className="text-base sm:text-lg text-zinc-50 leading-relaxed font-medium">
                 {t('home.card2_desc')}
               </p>
             </div>
 
             {/* Card 3: PRODUCTOS 100% MEXICANOS */}
-            <div className="flex flex-col items-center text-center group rounded-xl border border-zinc-800 p-8 sm:p-10 shadow-2xl hover:border-[#d4af37]/40 transition-colors bg-[#0c0d11]">
+            <div className="flex flex-col items-center text-center group rounded-xl border border-zinc-800 p-8 sm:p-10 shadow-2xl hover:border-[#d4af37]/60 transition-colors bg-[#0c0d11]">
               <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300 w-36 h-36 flex items-center justify-center">
                 <Image src={mexicanoImg} alt="Productos 100% Mexicanos" className="w-full h-full object-contain drop-shadow-xl scale-[1.4]" />
               </div>
-              <h3 className="text-[13px] font-black uppercase tracking-widest text-white mb-4 mt-2">
+              <h3 className="text-lg font-black uppercase tracking-widest text-white mb-3 mt-2">
                 {t('home.card3_title')}
               </h3>
-              <p className="text-[13px] text-zinc-300 leading-relaxed font-light">
+              <p className="text-base sm:text-lg text-zinc-50 leading-relaxed font-medium">
                 {t('home.card3_desc')}
               </p>
             </div>

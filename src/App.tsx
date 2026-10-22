@@ -140,7 +140,7 @@ export default function App() {
   return (
     <div className="min-h-screen flex flex-col bg-[#0a0b0e] text-zinc-200 font-sans selection:bg-[#d4af37] selection:text-black">
       {/* Top Banner indicating local persistence */}
-      <div className="bg-[#12141c] border-b border-zinc-800/80 px-4 py-1.5 text-center text-[11px] text-zinc-400 flex items-center justify-center gap-2">
+      <div className="bg-[#12141c] border-b border-zinc-800/80 px-4 py-1.5 text-center text-xs sm:text-sm text-zinc-300 font-medium flex items-center justify-center gap-2">
         <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
         <span>{t('app.secure_mode')}</span>
       </div>

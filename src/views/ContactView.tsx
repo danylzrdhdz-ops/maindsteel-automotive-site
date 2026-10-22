@@ -47,7 +47,7 @@ export const ContactView: React.FC = () => {
             CONTÁCTANOS
           </h1>
           <div className="w-20 h-1 bg-[#d4af37] mx-auto" />
-          <p className="text-sm sm:text-base text-zinc-300 font-light max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-zinc-100 font-normal max-w-2xl mx-auto leading-relaxed">
             En Maindsteel tenemos la mejor disposición para proveerte toda la información además de ayudarte con cualquier pregunta que puedas tener.
           </p>
         </div>
@@ -63,14 +63,14 @@ export const ContactView: React.FC = () => {
             {/* Address Card */}
             <div className="p-6 rounded-lg bg-[#12141a] border border-zinc-800 hover:border-[#d4af37]/60 transition-colors shadow-lg">
               <div className="flex items-start gap-4">
-                <div className="p-3 rounded-md bg-[#d4af37]/10 text-[#d4af37] flex-shrink-0">
+                <div className="p-3 rounded-md bg-[#d4af37]/15 text-[#d4af37] flex-shrink-0">
                   <MapPin className="w-6 h-6" />
                 </div>
                 <div className="space-y-1">
-                  <h3 className="text-xs uppercase font-extrabold tracking-wider text-[#d4af37]">
+                  <h3 className="text-xs sm:text-sm uppercase font-extrabold tracking-wider text-[#f5d47a]">
                     Planta de Manufactura PIVA
                   </h3>
-                  <p className="text-xs sm:text-sm text-zinc-300 font-light leading-relaxed">
+                  <p className="text-sm text-zinc-200 font-normal leading-relaxed">
                     PIVA Parque Industrial del Valle de Aguascalientes, Calle Municipio de calvillo # 103
                     Col. Valle de Aguascalientes, San Fransisco de los Romo, Aguascalientes, México.
                   </p>
@@ -81,11 +81,11 @@ export const ContactView: React.FC = () => {
             {/* Phone Card */}
             <div className="p-6 rounded-lg bg-[#12141a] border border-zinc-800 hover:border-[#d4af37]/60 transition-colors shadow-lg">
               <div className="flex items-center gap-4">
-                <div className="p-3 rounded-md bg-[#d4af37]/10 text-[#d4af37] flex-shrink-0">
+                <div className="p-3 rounded-md bg-[#d4af37]/15 text-[#d4af37] flex-shrink-0">
                   <Phone className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-xs uppercase font-extrabold tracking-wider text-[#d4af37]">
+                  <h3 className="text-xs sm:text-sm uppercase font-extrabold tracking-wider text-[#f5d47a]">
                     Teléfono Directo Conmutador
                   </h3>
                   <a
@@ -94,7 +94,7 @@ export const ContactView: React.FC = () => {
                   >
                     +52-449-158-17-09
                   </a>
-                  <span className="text-[11px] text-zinc-400 block mt-0.5">
+                  <span className="text-xs text-zinc-300 font-medium block mt-1">
                     Lunes a Viernes • 08:00 hrs a 18:00 hrs
                   </span>
                 </div>
@@ -169,7 +169,7 @@ export const ContactView: React.FC = () => {
                 <form onSubmit={handleSubmit} className="space-y-5" id="contact-form">
                   {/* Nombre */}
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-1.5">
+                    <label className="block text-xs sm:text-sm font-bold uppercase tracking-wider text-zinc-200 mb-1.5">
                       Nombre *
                     </label>
                     <input
@@ -178,14 +178,14 @@ export const ContactView: React.FC = () => {
                       onChange={(e) => setNombre(e.target.value)}
                       placeholder="Tu Nombre"
                       required
-                      className="w-full px-4 py-3 bg-[#121212] border border-[#d4af37]/40 rounded-sm text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-[#d4af37] transition-colors"
+                      className="w-full px-4 py-3 bg-[#121212] border border-[#d4af37]/60 rounded-sm text-sm sm:text-base text-white placeholder-zinc-400 font-medium focus:outline-none focus:border-[#d4af37] transition-colors"
                       id="input-nombre"
                     />
                   </div>
 
                   {/* Email */}
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-1.5">
+                    <label className="block text-xs sm:text-sm font-bold uppercase tracking-wider text-zinc-200 mb-1.5">
                       Email *
                     </label>
                     <input
@@ -194,14 +194,14 @@ export const ContactView: React.FC = () => {
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="Tu Email"
                       required
-                      className="w-full px-4 py-3 bg-[#121212] border border-[#d4af37]/40 rounded-sm text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-[#d4af37] transition-colors"
+                      className="w-full px-4 py-3 bg-[#121212] border border-[#d4af37]/60 rounded-sm text-sm sm:text-base text-white placeholder-zinc-400 font-medium focus:outline-none focus:border-[#d4af37] transition-colors"
                       id="input-email"
                     />
                   </div>
 
                   {/* Teléfono */}
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-1.5">
+                    <label className="block text-xs sm:text-sm font-bold uppercase tracking-wider text-zinc-200 mb-1.5">
                       Teléfono
                     </label>
                     <input
@@ -209,14 +209,14 @@ export const ContactView: React.FC = () => {
                       value={telefono}
                       onChange={(e) => setTelefono(e.target.value)}
                       placeholder="Tu teléfono"
-                      className="w-full px-4 py-3 bg-[#121212] border border-[#d4af37]/40 rounded-sm text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-[#d4af37] transition-colors"
+                      className="w-full px-4 py-3 bg-[#121212] border border-[#d4af37]/60 rounded-sm text-sm sm:text-base text-white placeholder-zinc-400 font-medium focus:outline-none focus:border-[#d4af37] transition-colors"
                       id="input-telefono"
                     />
                   </div>
 
                   {/* Asunto */}
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-1.5">
+                    <label className="block text-xs sm:text-sm font-bold uppercase tracking-wider text-zinc-200 mb-1.5">
                       Asunto
                     </label>
                     <input
@@ -224,14 +224,14 @@ export const ContactView: React.FC = () => {
                       value={asunto}
                       onChange={(e) => setAsunto(e.target.value)}
                       placeholder="Cuál es tu asunto"
-                      className="w-full px-4 py-3 bg-[#121212] border border-[#d4af37]/40 rounded-sm text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-[#d4af37] transition-colors"
+                      className="w-full px-4 py-3 bg-[#121212] border border-[#d4af37]/60 rounded-sm text-sm sm:text-base text-white placeholder-zinc-400 font-medium focus:outline-none focus:border-[#d4af37] transition-colors"
                       id="input-asunto"
                     />
                   </div>
 
                   {/* Mensaje */}
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-1.5">
+                    <label className="block text-xs sm:text-sm font-bold uppercase tracking-wider text-zinc-200 mb-1.5">
                       Mensaje *
                     </label>
                     <textarea
@@ -240,7 +240,7 @@ export const ContactView: React.FC = () => {
                       onChange={(e) => setMensaje(e.target.value)}
                       placeholder="Escríbenos un mensaje"
                       required
-                      className="w-full px-4 py-3 bg-[#121212] border border-[#d4af37]/40 rounded-sm text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-[#d4af37] transition-colors resize-none"
+                      className="w-full px-4 py-3 bg-[#121212] border border-[#d4af37]/60 rounded-sm text-sm sm:text-base text-white placeholder-zinc-400 font-medium focus:outline-none focus:border-[#d4af37] transition-colors resize-none"
                       id="textarea-mensaje"
                     />
                   </div>
@@ -250,7 +250,7 @@ export const ContactView: React.FC = () => {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full py-3.5 bg-[#b8860b] hover:bg-[#d4af37] text-white text-xs font-black uppercase tracking-wider rounded transition-all shadow-[0_4px_16px_rgba(184,134,11,0.4)] flex items-center justify-center gap-2 disabled:opacity-60"
+                      className="w-full py-3.5 bg-[#b8860b] hover:bg-[#d4af37] text-white text-xs sm:text-sm font-black uppercase tracking-wider rounded transition-all shadow-[0_4px_16px_rgba(184,134,11,0.4)] flex items-center justify-center gap-2 disabled:opacity-60 cursor-pointer"
                       id="btn-enviar-datos"
                     >
                       <Send className="w-4 h-4" />

@@ -74,10 +74,10 @@ export const Header: React.FC<HeaderProps> = ({
               <button
                 key={link.route}
                 onClick={() => onNavigate(link.route)}
-                className={`relative py-1 text-sm tracking-wider font-bold uppercase transition-colors ${
+                className={`relative py-1 text-sm sm:text-base tracking-wider font-bold uppercase transition-colors cursor-pointer ${
                   active
                     ? 'text-[#f5d47a]'
-                    : 'text-zinc-400 hover:text-white'
+                    : 'text-zinc-200 hover:text-[#f5d47a]'
                 }`}
                 id={`nav-link-${link.route.replace('/', '-')}`}
               >
@@ -97,7 +97,7 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               type="button"
               onClick={handleTranslateToggle}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-semibold text-zinc-300 hover:text-white hover:bg-zinc-800/80 border border-zinc-800 transition-colors"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-bold text-zinc-100 hover:text-white hover:bg-zinc-800/80 border border-zinc-700 transition-colors cursor-pointer"
               title="Alternar Idioma / Toggle Language"
               id="lang-selector-btn"
             >
@@ -121,17 +121,17 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
 
             {showPhoneTooltip && (
-              <div className="absolute right-0 top-full mt-2 w-56 p-3 bg-[#16181f] border border-[#d4af37]/60 rounded-md shadow-2xl z-50 text-xs animate-in fade-in">
-                <span className="text-[10px] uppercase font-bold text-[#d4af37] block mb-1">
+              <div className="absolute right-0 top-full mt-2 w-64 p-3.5 bg-[#16181f] border border-[#d4af37]/80 rounded-md shadow-2xl z-50 text-xs animate-in fade-in">
+                <span className="text-xs uppercase font-extrabold text-[#f5d47a] block mb-1">
                   {t('header.attention')}
                 </span>
                 <a
                   href="tel:+524491581709"
-                  className="text-white font-bold text-sm block hover:underline hover:text-[#f5d47a]"
+                  className="text-white font-black text-base block hover:underline hover:text-[#f5d47a]"
                 >
                   +52-449-158-17-09
                 </a>
-                <span className="text-[10px] text-zinc-400 block mt-1">
+                <span className="text-xs text-zinc-300 font-medium block mt-1">
                   {t('header.schedule')}
                 </span>
               </div>
@@ -181,8 +181,8 @@ export const Header: React.FC<HeaderProps> = ({
                   onNavigate(link.route);
                   setMobileMenuOpen(false);
                 }}
-                className={`block w-full text-left py-2 text-sm font-bold tracking-wider uppercase ${
-                  active ? 'text-[#f5d47a] font-black' : 'text-zinc-400'
+                className={`block w-full text-left py-2.5 text-base font-bold tracking-wider uppercase ${
+                  active ? 'text-[#f5d47a] font-black' : 'text-zinc-200 hover:text-white'
                 }`}
               >
                 {link.label}
@@ -190,12 +190,12 @@ export const Header: React.FC<HeaderProps> = ({
             );
           })}
 
-          <div className="pt-3 border-t border-zinc-800 flex items-center justify-between text-xs text-zinc-400">
-            <span className="flex items-center gap-1">
-              <Phone className="w-3.5 h-3.5 text-[#d4af37]" /> +52-449-158-17-09
+          <div className="pt-3 border-t border-zinc-800 flex items-center justify-between text-xs sm:text-sm text-zinc-300 font-medium">
+            <span className="flex items-center gap-1.5">
+              <Phone className="w-4 h-4 text-[#d4af37]" /> +52-449-158-17-09
             </span>
-            <span className="flex items-center gap-1" onClick={handleTranslateToggle}>
-              <Globe className="w-3.5 h-3.5 text-[#d4af37]" /> {i18n.language === 'es' ? 'EN' : 'ES'}
+            <span className="flex items-center gap-1.5 cursor-pointer" onClick={handleTranslateToggle}>
+              <Globe className="w-4 h-4 text-[#d4af37]" /> {i18n.language === 'es' ? 'EN' : 'ES'}
             </span>
           </div>
         </div>
