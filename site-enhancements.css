@@ -110,3 +110,9 @@ main:has(#chatbot-main-card) {
 body:has(#chatbot-main-card) #btn-open-db-drawer {
   display: none !important;
 }
+
+#intro-section [class~="bg-[#0c0d11]"],
+#tech-capacity-section [class~="bg-[#0b0c10]/85"],
+#tech-capacity-section [class~="bg-[#0b0c10]/90"] {
+  background-color: #07080b !important;
+}
