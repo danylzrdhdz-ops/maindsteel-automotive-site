@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /cotizador/
+
+Sitemap: https://danylzrdhdz-ops.github.io/maindsteel-automotive-site/sitemap.xml

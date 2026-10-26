@@ -1,0 +1,112 @@
+/* Mejoras de legibilidad y accesibilidad para Maindsteel Automotive
+   Se carga después de los estilos compilados para sobrescribir valores
+   demasiado pequeños o con poco contraste sobre fondos oscuros. */
+
+:root {
+  color-scheme: dark;
+}
+
+/* Evita micro-textos de 9-11px: mínimo legible de 12px con interlineado cómodo */
+.text-\[9px\],
+.text-\[10px\],
+.text-\[11px\] {
+  font-size: 0.75rem !important;
+  line-height: 1.45 !important;
+}
+
+/* Sube el contraste de los grises medios sobre fondos oscuros (WCAG AA) */
+.text-zinc-500 {
+  color: #a1a1aa !important;
+}
+
+.text-zinc-600 {
+  color: #a1a1aa !important;
+}
+
+.text-neutral-500 {
+  color: #a3a3a3 !important;
+}
+
+.text-neutral-600 {
+  color: #a3a3a3 !important;
+}
+
+/* Placeholders con contraste suficiente */
+input::placeholder,
+textarea::placeholder {
+  color: #9ca3af !important;
+  opacity: 1;
+}
+
+/* Mejor reparto de líneas en títulos y párrafos largos */
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* Foco visible para navegación por teclado */
+:focus-visible {
+  outline: 2px solid #f5d47a;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Compensa la navegación por anclas/hash bajo encabezados fijos */
+[id] {
+  scroll-margin-top: 5rem;
+}
+
+/* En móvil, evita el zoom automático de iOS al enfocar formularios */
+@media (max-width: 640px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Respeta la preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Modo de alto contraste del sistema */
+@media (prefers-contrast: more) {
+  .text-zinc-400,
+  .text-neutral-400,
+  .text-zinc-500,
+  .text-neutral-500 {
+    color: #e5e5e5 !important;
+  }
+}
+
+/* Chatbot: la interfaz completa fluye con la página; el documento es el
+   único contenedor con scroll (sin scroll interno del chat). */
+div.absolute.inset-0.z-50:has(#chatbot-main-card) {
+  position: relative !important;
+  inset: auto !important;
+  height: auto !important;
+  z-index: auto !important;
+  overflow: visible !important;
+  padding-top: 0 !important;
+}
+
+main:has(#chatbot-main-card) {
+  overflow-y: visible !important;
+}
+
+body:has(#chatbot-main-card) #btn-open-db-drawer {
+  display: none !important;
+}
