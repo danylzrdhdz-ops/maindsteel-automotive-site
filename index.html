@@ -66,15 +66,25 @@
       crossorigin
       href="/maindsteel-automotive-site/assets/index-nH_NM09M.css"
     />
-    <link rel="stylesheet" href="/maindsteel-automotive-site/site-enhancements.css?v=20261112c" />
+    <link rel="stylesheet" href="/maindsteel-automotive-site/site-enhancements.css?v=20261112d" />
     <script
       type="module"
       crossorigin
-      src="/maindsteel-automotive-site/assets/index-CQeGRCkO.js?v=20261112c"
+      src="/maindsteel-automotive-site/assets/index-CQeGRCkO.js?v=20261112d"
     ></script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Shown until the app renders (React replaces this); keeps slow phones from seeing a blank screen -->
+      <div style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; background: #0a0b0e; color: #d4af37; font-family: Inter, system-ui, sans-serif">
+        <div style="font-size: 22px; font-weight: 800; letter-spacing: 0.08em; color: #e4e4e7">MAINDSTEEL <span style="color: #d4af37">AUTOMOTIVE</span></div>
+        <div style="width: 160px; height: 3px; background: #1f2128; border-radius: 3px; overflow: hidden">
+          <div style="width: 40%; height: 100%; background: #d4af37; border-radius: 3px; animation: ms-load 1.1s ease-in-out infinite"></div>
+        </div>
+        <div style="font-size: 13px; color: #a1a1aa">Cargando…</div>
+        <style>@keyframes ms-load { 0% { transform: translateX(-100%) } 100% { transform: translateX(250%) } }</style>
+      </div>
+    </div>
     <noscript>
       <div style="max-width: 40rem; margin: 4rem auto; padding: 0 1.5rem; color: #e4e4e7; font-family: system-ui, sans-serif">
         <h1>Maindsteel Automotive</h1>
