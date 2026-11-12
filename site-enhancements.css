@@ -116,3 +116,12 @@ body:has(#chatbot-main-card) #btn-open-db-drawer {
 #tech-capacity-section [class~="bg-[#0b0c10]/90"] {
   background-color: #07080b !important;
 }
+
+/* Footer social coins: equal size, centered (per-image coin size/offset measured) */
+#main-footer .social-coin { transition: transform .3s; transform: translate(var(--cx,0%), var(--cy,0%)) scale(var(--cs,4.5)); }
+#main-footer a:hover .social-coin { transform: translate(var(--cx,0%), var(--cy,0%)) scale(calc(var(--cs,4.5) * 1.11)); }
+#main-footer .social-coin-tiktok    { --cs: 4.5;  --cx: -4%;  --cy: -3%; }
+#main-footer .social-coin-linkedin  { --cs: 4.86; --cx: 1%;   --cy: 0.5%; }
+#main-footer .social-coin-instagram { --cs: 4.5;  --cx: 0.5%; --cy: -15.8%; }
+#main-footer .social-coin-email     { --cs: 4.5;  --cx: -2.3%; --cy: -3%; }
+#main-footer .social-coin-facebook  { --cs: 4.85; --cx: -8.2%; --cy: 22.3%; }
