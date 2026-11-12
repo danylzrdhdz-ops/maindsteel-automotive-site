@@ -172,3 +172,7 @@ body:has(#chatbot-main-card) #btn-open-db-drawer {
   .msf-foot { margin: 0 14px; }
   .msf-actions .msf-btn { flex: 1 1 auto; }
 }
+/* Home hero: lighter photo (was brightness .55 under a black/90-70-90 overlay) */
+#hero-section img[alt="Manufactura a la Altura"] { filter: brightness(.78) contrast(1.08) !important; }
+#hero-section > .absolute.inset-0.z-0 > [class*="bg-gradient-to-r"] { opacity: .72; }
+#hero-section h1, #hero-section p { text-shadow: 0 2px 14px rgba(0,0,0,.55); }
