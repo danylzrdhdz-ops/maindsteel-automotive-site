@@ -221,5 +221,30 @@
     return Promise.resolve();
   }
 
-  window.MSFicha = { html: html, download: download, print: print, copy: copy, text: text };
+  // ---------- Confirmation shown in the chatbot after sending (instead of the full sheet) ----------
+  function exito(rfq) {
+    var item = val(rfq.itemName);
+    if (sendFailed(rfq)) {
+      return '' +
+        '<div class="msf-exito msf-exito-error" role="alert">' +
+          '<div class="msf-alerta" aria-hidden="true">!</div>' +
+          '<h3 class="msf-exito-t">No pudimos enviar tu solicitud</h3>' +
+          '<p class="msf-exito-p">Llámanos al ' + PHONE + ' o escríbenos a ' + EMAIL + ' y menciona el folio. También puedes descargar tu ficha y enviárnosla.</p>' +
+          '<div class="msf-exito-folio">Folio <strong>' + esc(rfq.id || '') + '</strong></div>' +
+        '</div>';
+    }
+    return '' +
+      '<div class="msf-exito" role="status">' +
+        '<svg class="msf-check" viewBox="0 0 52 52" aria-hidden="true">' +
+          '<circle class="msf-check-c" cx="26" cy="26" r="24"/>' +
+          '<path class="msf-check-p" d="M15 27.5l7.5 7.5L37.5 19"/>' +
+        '</svg>' +
+        '<h3 class="msf-exito-t">¡Solicitud enviada!</h3>' +
+        '<p class="msf-exito-p">Recibimos tu solicitud de <strong>' + esc(item) + '</strong>. Te contactaremos en menos de 5 minutos en horario hábil o a primera hora del siguiente día hábil.</p>' +
+        '<div class="msf-exito-folio">Folio <strong>' + esc(rfq.id || '') + '</strong></div>' +
+        '<p class="msf-exito-hint">Descarga tu ficha de solicitud en PDF para tus registros.</p>' +
+      '</div>';
+  }
+
+  window.MSFicha = { html: html, exito: exito, download: download, print: print, copy: copy, text: text };
 })();
