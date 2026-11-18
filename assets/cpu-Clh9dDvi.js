@@ -1,4 +1,4 @@
-import{c as h}from"./index-CQeGRCkO.js?v=20261118d";/**
+import{c as h}from"./index-CQeGRCkO.js";/**
  * @license lucide-react v0.546.0 - ISC
  *
  * This source code is licensed under the ISC license.
